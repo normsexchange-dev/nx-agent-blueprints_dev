@@ -1,0 +1,5 @@
+COMPARE AN EXISTING AGENT WITH A LATER FAMILY RELEASE
+
+DO NOT EXECUTE UNLESS the agent's sovereign owner authorizes read-only comparison of its pinned family state.
+
+Perform a three-way comparison of the pinned release, locally evolved state, and exact proposed immutable release. Report changes to purpose, procedures, knowledge, boundaries, tools, evaluations, compatibility, privacy, external capabilities, and local divergence. Preserve identity, history, and local work. Do not overwrite or adopt.

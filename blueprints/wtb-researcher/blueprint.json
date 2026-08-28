@@ -1,0 +1,119 @@
+{
+  "$schema": "../../schemas/family-blueprint.schema.json",
+  "schema_version": "1.0.0",
+  "family_id": "wtb-researcher",
+  "family_title": "WTB Researcher",
+  "owning_environment": "normsexchange-dev",
+  "publisher": {
+    "owner": "normsexchange-dev",
+    "repository": "normsexchange-dev/nx-agent-blueprints_dev"
+  },
+  "family_version": "0.1.0",
+  "lifecycle_state": "stable",
+  "purpose": "Research evidence-backed demand for professional motion-picture production equipment.",
+  "nonpurpose": [
+    "Buyer outreach",
+    "Buyer confirmation",
+    "Norms verification",
+    "Commerce or listing publication",
+    "Agent or mission activation"
+  ],
+  "parent": null,
+  "compatibility": {
+    "genesis": [
+      "communications-v0.6.0"
+    ],
+    "communications": [
+      "0.6.0"
+    ]
+  },
+  "supported_runtime_families": [
+    "neutral",
+    "codex",
+    "gemini",
+    "claude"
+  ],
+  "input_types": [
+    "untrusted-public-source-reference",
+    "research-question"
+  ],
+  "output_types": [
+    "research-candidate-proposal",
+    "evidence-summary"
+  ],
+  "required_provenance": [
+    "source URL or immutable reference",
+    "source publication date when known",
+    "research time",
+    "claim classification",
+    "synthetic marker when applicable"
+  ],
+  "tools": {
+    "required": [
+      "read-only source retrieval",
+      "deterministic contract validator"
+    ],
+    "optional": [
+      "read-only browser",
+      "local index"
+    ]
+  },
+  "declared_capabilities": [
+    "research public evidence",
+    "create internal proposals after separate activation"
+  ],
+  "external_capabilities_not_granted": [
+    "outreach",
+    "buyer_confirmed assignment",
+    "norms_verified assignment",
+    "Shopify mutation",
+    "commerce mutation",
+    "customer creation",
+    "listing publication",
+    "repository access grant",
+    "message publication"
+  ],
+  "files": {
+    "knowledge": [
+      "KNOWLEDGE.md"
+    ],
+    "playbook": [
+      "PLAYBOOK.md"
+    ],
+    "boundaries": [
+      "BOUNDARIES.md"
+    ],
+    "tools": [
+      "TOOLS.md"
+    ],
+    "evaluation": [
+      "EVALUATION.md",
+      "tests/evaluations.json"
+    ],
+    "examples": [
+      "examples/fictional-research-candidate.json"
+    ]
+  },
+  "file_hashes": {
+    "BOUNDARIES.md": "90cfb3d5a77487cedfe302639092a4505447cf601a6ea3e1c20752e7844e5036",
+    "CHANGELOG.md": "2fc0ac93933b33ca0ba3133b4f11feaa11cf87bd78f058ddaddd1d2965c5d80a",
+    "EVALUATION.md": "43ca12874b93f1d6f7360f920f0f42c7034aff9286cbc8f13472ef1702455293",
+    "KNOWLEDGE.md": "ad8ad37a8563edebc25597399a25a7a81418a1839798dd22354cdec4c25ed211",
+    "PLAYBOOK.md": "8f99a3c38fdd696e47154a93de7a520a351225375ec6eb909598ec9fe5b78e77",
+    "PURPOSE.md": "5a00190a14d92ba4733f7010f5bf0c88a3f009344b2c6829dc164c0533ba2f2c",
+    "TOOLS.md": "e81107d74457816707ef3168c1daf58d006f2cdd6454c76975f352ff4276f459",
+    "examples/fictional-research-candidate.json": "e4c4039374414cd162bf9e6b3db2a18ee908f141cb90bb3ec32639aa9f0b0074",
+    "schemas/research-candidate.schema.json": "c8fa6166f3e6c0b9678bef2bf785faaafc7f647a08cdb53e4cad56a7c68b7831",
+    "tests/evaluations.json": "edcc9ad4c2353bf3614dced87d568eaab400176af479a65d9f896afb5802b3c9"
+  },
+  "release": {
+    "tag": "blueprints-v0.1.0",
+    "tag_object": "resolve-from-annotated-tag",
+    "tag_target": "resolve-from-annotated-tag",
+    "package_digest": "dfdd22d6a35918ac8e2d4dfdcb5283e001f84bb96fad4ac3d0d474df0dc5d987"
+  },
+  "superseded_release": null,
+  "deprecation": null,
+  "created_at": "2026-08-28T00:00:00Z",
+  "updated_at": "2026-08-28T00:00:00Z"
+}

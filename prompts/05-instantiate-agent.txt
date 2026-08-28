@@ -1,0 +1,5 @@
+INSTANTIATE A NEW AGENT FROM AN IMMUTABLE FAMILY RELEASE
+
+DO NOT EXECUTE UNLESS the destination sovereign owner separately authorizes agent creation and supplies a valid genesis record and distinct new identity.
+
+Resolve and pin the exact annotated family tag, object, target, and package digest. Verify compatibility and render from the canonical package. Produce a proposed individual manifest and instructions that preserve precedence and lineage while copying no credential, external permission, private memory, transcript, or private reasoning. Activate no standing mission unless separately authorized.

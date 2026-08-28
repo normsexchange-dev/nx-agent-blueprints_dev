@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.0/blueprints/wtb-researcher/schemas/research-candidate.schema.json",
+  "title": "Nonadmitted fictional WTB research candidate",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "fixture", "candidate_id", "organization", "equipment", "claim_state", "quantity", "budget", "currency", "timeline", "evidence", "authority"],
+  "properties": {"schema_version": {"const": "1.0.0"}, "fixture": {"const": true}, "candidate_id": {"type": "string"}, "organization": {"type": "object"}, "equipment": {"type": "object"}, "claim_state": {"enum": ["research_candidate", "inferred_demand", "public_observation", "externally_reported_demand"]}, "quantity": {"type": ["integer", "null"]}, "budget": {"type": ["number", "null"]}, "currency": {"type": ["string", "null"]}, "timeline": {"type": ["string", "null"]}, "evidence": {"type": "array", "minItems": 1}, "authority": {"const": "proposal-only-no-external-authority"}}
+}

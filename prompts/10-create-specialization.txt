@@ -1,0 +1,5 @@
+CREATE A FAMILY SPECIALIZATION
+
+DO NOT EXECUTE UNLESS the sovereign owner authorizes a specialization on an exact immutable base release.
+
+Record the base family and release, additional purpose, knowledge, procedures, precedence, and every declared override. A specialization may narrow or compatibly extend the family but may not silently contradict it. Add evaluations for explicit overrides and keep private specializations private unless publication is separately authorized.

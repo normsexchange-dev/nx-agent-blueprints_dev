@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/family-registry.schema.json",
+  "schema_version": "1.0.0",
+  "families": [
+    {
+      "family_id": "wtb-researcher",
+      "title": "WTB Researcher",
+      "owner": "normsexchange-dev",
+      "source_repository": "normsexchange-dev/nx-agent-blueprints_dev",
+      "lifecycle_state": "stable",
+      "current_stable_version": "0.1.0",
+      "experimental_versions": [],
+      "deprecated_versions": [],
+      "retired_versions": [],
+      "immutable_tags": ["blueprints-v0.1.0"],
+      "compatible_genesis_versions": ["communications-v0.6.0"],
+      "compatible_communications_versions": ["0.6.0"],
+      "specializations": [],
+      "forks": [],
+      "successors": []
+    }
+  ]
+}

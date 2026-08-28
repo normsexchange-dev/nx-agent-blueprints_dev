@@ -1,0 +1,15 @@
+{
+  "$schema": "../schemas/research-candidate.schema.json",
+  "schema_version": "1.0.0",
+  "fixture": true,
+  "candidate_id": "fixture-candidate-001",
+  "organization": {"name": "Example Cinema Cooperative", "website": "https://cinema.example"},
+  "equipment": {"description": "fictional 35 mm production camera package"},
+  "claim_state": "public_observation",
+  "quantity": null,
+  "budget": null,
+  "currency": null,
+  "timeline": null,
+  "evidence": [{"url": "https://cinema.example/wanted/fixture-001", "source_date": "2026-08-01", "researched_at": "2026-08-28T00:00:00Z", "synthetic": true}],
+  "authority": "proposal-only-no-external-authority"
+}

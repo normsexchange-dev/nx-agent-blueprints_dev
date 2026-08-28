@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.0/schemas/rendered-bundle.schema.json",
+  "title": "NX deterministic rendered instruction bundle", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "family_id", "family_version", "source_release", "package_digest", "adapter", "precedence", "sections", "external_authority_granted"],
+  "properties": {"schema_version": {"const": "1.0.0"}, "family_id": {"type": "string"}, "family_version": {"type": "string"}, "source_release": {"type": "string"}, "package_digest": {"type": "string"}, "adapter": {"enum": ["neutral", "codex", "gemini", "claude"]}, "precedence": {"type": "array"}, "sections": {"type": "object"}, "external_authority_granted": {"const": false}}
+}

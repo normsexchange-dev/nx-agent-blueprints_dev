@@ -1,0 +1,5 @@
+PUBLISH A BLUEPRINT UPDATE THROUGH A PAIRWISE CHANNEL
+
+DO NOT EXECUTE UNLESS the publisher owns the outbound channel and separately authorizes message publication.
+
+Create a generic communications-v0.6.0 notification or protocol notice whose JSON payload uses the blueprint-reference schema. Pin publisher owner/repository, 40-hex commit, package path, annotated tag, tag object, target, digest, family ID/version, and provenance. Publish only from the publisher-owned channel. Grant no reader write access and require any response in the receiver-owned outbound channel.
