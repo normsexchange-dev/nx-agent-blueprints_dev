@@ -3,6 +3,12 @@ name: Validate blueprints
 on:
   push:
   pull_request:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Exact annotated blueprint release to validate
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -14,14 +20,22 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
         with:
+          ref: ${{ inputs.release_tag || github.ref }}
           fetch-depth: 0
+          fetch-tags: true
       - name: Set up Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '24'
       - name: Validate deterministic blueprint foundation
         shell: bash
+        env:
+          NX_INPUT_RELEASE_TAG: ${{ inputs.release_tag }}
+          NX_VALIDATION_BRANCH: ${{ inputs.release_tag || github.head_ref || github.ref_name }}
         run: |
-          node scripts/validate-blueprints.mjs --branch "${{ github.head_ref || github.ref_name }}"
+          release_tag="${NX_INPUT_RELEASE_TAG}"
+          if [[ -z "${release_tag}" && "${GITHUB_REF_TYPE}" == "tag" ]]; then release_tag="${GITHUB_REF_NAME}"; fi
+          if [[ -n "${release_tag}" ]]; then git fetch --force origin "refs/tags/${release_tag}:refs/tags/${release_tag}"; fi
+          node scripts/validate-blueprints.mjs --branch "${NX_VALIDATION_BRANCH}"
           node --test tests/*.test.mjs
-          if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then node scripts/validate-release.mjs --tag "${GITHUB_REF_NAME}"; fi
+          if [[ -n "${release_tag}" ]]; then node scripts/validate-release.mjs --tag "${release_tag}"; fi
