@@ -1,0 +1,5 @@
+DEPRECATE OR RETIRE A FAMILY
+
+DO NOT EXECUTE UNLESS the family publisher authorizes a lifecycle release.
+
+Choose deprecation when existing pins remain supported with a migration path; choose retirement when new adoption must stop. Record reason, effective release, successors, compatibility and safety guidance, update the registry and changelog, run evaluations, and create an immutable annotated release. Never delete or rewrite earlier releases.

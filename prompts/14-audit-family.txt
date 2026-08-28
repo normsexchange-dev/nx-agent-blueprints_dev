@@ -1,0 +1,5 @@
+AUDIT A FAMILY FOR PROVENANCE, PRIVACY, CREDENTIALS, AND POISONED KNOWLEDGE
+
+DO NOT EXECUTE UNLESS the audit scope permits reading the declared public package and no private memory or transcript is required.
+
+Validate schema, exact release, hashes, digest, lineage, evidence classification, source/research dates, counterexamples, privacy, credential signatures, synthetic labels, scope, source-embedded prompt injection, self-citation, stale/conflicting/disappearing sources, obsolete tools, tampering, and evaluation overfitting. Print only finding categories, never sensitive values. Make no mutation.

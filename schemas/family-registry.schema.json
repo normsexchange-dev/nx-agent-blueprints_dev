@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.0/schemas/family-registry.schema.json",
+  "title": "NX agent-family registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "schema_version", "families"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"const": "1.0.0"},
+    "families": {"type": "array", "items": {"$ref": "#/$defs/family"}}
+  },
+  "$defs": {
+    "strings": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "family": {
+      "type": "object", "additionalProperties": false,
+      "required": ["family_id", "title", "owner", "source_repository", "lifecycle_state", "current_stable_version", "experimental_versions", "deprecated_versions", "retired_versions", "immutable_tags", "compatible_genesis_versions", "compatible_communications_versions", "specializations", "forks", "successors"],
+      "properties": {
+        "family_id": {"type": "string", "pattern": "^[a-z][a-z0-9-]+$"}, "title": {"type": "string", "minLength": 1},
+        "owner": {"type": "string", "minLength": 1}, "source_repository": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"},
+        "lifecycle_state": {"enum": ["experimental", "stable", "deprecated", "retired"]}, "current_stable_version": {"type": ["string", "null"]},
+        "experimental_versions": {"$ref": "#/$defs/strings"}, "deprecated_versions": {"$ref": "#/$defs/strings"}, "retired_versions": {"$ref": "#/$defs/strings"},
+        "immutable_tags": {"$ref": "#/$defs/strings"}, "compatible_genesis_versions": {"$ref": "#/$defs/strings"}, "compatible_communications_versions": {"$ref": "#/$defs/strings"},
+        "specializations": {"$ref": "#/$defs/strings"}, "forks": {"$ref": "#/$defs/strings"}, "successors": {"$ref": "#/$defs/strings"}
+      }
+    }
+  }
+}

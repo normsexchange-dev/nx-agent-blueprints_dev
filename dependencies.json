@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "communications": {
+    "repository": "normsexchange-dev/nx-codex-communications_dev",
+    "version": "0.6.0",
+    "tag": "communications-v0.6.0",
+    "tag_object": "500db28fa1f0dc6b5768e717202cf5b2af0daf7b",
+    "tag_target": "9a545b09ccffb5ac1f65633f0e0fe74794beca62"
+  },
+  "sourcing_contract": {
+    "repository": "normsexchange-dev/nx-sourcing-contracts_dev",
+    "version": "0.2.0",
+    "tag": "contract-v0.2.0",
+    "tag_object": "a3c60a04ef20ecbb70d0a705d4256f2e70651f39",
+    "tag_target": "712c07d76b1d1b60b04a8bf4dc2f041536e4a11f"
+  }
+}

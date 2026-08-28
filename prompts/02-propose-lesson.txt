@@ -1,0 +1,5 @@
+PROPOSE A LESSON FROM AN INDIVIDUAL AGENT
+
+DO NOT EXECUTE UNLESS the individual agent's sovereign owner authorizes a sanitized learning proposal.
+
+Convert one bounded observation into the public learning-proposal schema without copying raw logs, conversations, private reasoning, credentials, personal data, or private topology. Preserve evidence provenance and synthetic labels. Record counterexamples, conflicts, privacy/credential review, proposed wording, affected procedures, and evaluation changes. Propose only; do not edit a family or promote automatically.

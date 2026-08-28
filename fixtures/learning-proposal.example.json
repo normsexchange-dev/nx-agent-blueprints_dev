@@ -1,0 +1,23 @@
+{
+  "$schema": "../schemas/learning-proposal.schema.json",
+  "schema_version": "1.0.0",
+  "proposal_id": "fixture-learning-001",
+  "proposing_environment": "example-environment",
+  "proposing_agent": "fixture-researcher-001",
+  "target_scope": "family_knowledge",
+  "target_family": "wtb-researcher",
+  "observation": "A source publication date may be unavailable even when a stable public reference and research time are retained.",
+  "evidence_references": [{"source_kind": "public_source", "url": "https://research.example/source-001", "synthetic": true}],
+  "provenance_classification": "heuristic",
+  "confidence": 0.5,
+  "known_counterexamples": ["Some sources expose a reliable publication date."],
+  "conflict_analysis": "No conflict; the rule preserves missingness.",
+  "privacy_review": "pass",
+  "credential_review": "pass",
+  "proposed_wording": "When a source publication date is unavailable, preserve it as missing and retain the research time.",
+  "affected_playbook_sections": ["source capture"],
+  "proposed_evaluation_changes": ["Add a missing-publication-date scenario."],
+  "disposition": "approved",
+  "adopting_authority": "fixture-publisher-review",
+  "release_containing_lesson": null
+}

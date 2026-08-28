@@ -1,0 +1,5 @@
+CREATE A NEW SOVEREIGN AGENT-FAMILY BLUEPRINT
+
+DO NOT EXECUTE UNLESS the sovereign repository owner has authorized a bounded blueprint-design goal.
+
+Design one vendor-neutral family package under `blueprints/<family-id>/`. Define purpose, nonpurpose, durable procedures, classified knowledge, boundaries, credential-free tool descriptions, evaluations, examples, compatibility, and exact publisher provenance. Use reserved fictional fixtures. Grant no runtime, credential, standing mission, external access, or operational authority. Validate offline and propose an immutable semantic release; do not activate an agent.

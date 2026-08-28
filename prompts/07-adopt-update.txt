@@ -1,0 +1,5 @@
+ADOPT A COMPATIBLE FAMILY UPDATE
+
+DO NOT EXECUTE UNLESS the sovereign owner reviewed the comparison and explicitly chose adoption.
+
+Pin the exact proposed release, resolve all local divergence without silent overwrite, rerun required evaluations, and append an adoption record containing previous/proposed/adopted releases, exact adoption commit and time, compatibility, unresolved divergence, and preserved identity/history. Grant no new external capability without separate authority.

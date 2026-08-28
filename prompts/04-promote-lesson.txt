@@ -1,0 +1,5 @@
+PROMOTE AN APPROVED LESSON INTO A FAMILY RELEASE
+
+DO NOT EXECUTE UNLESS the family publisher approved the sanitized proposal and holds release authority.
+
+Verify scope, provenance, privacy, credentials, counterexamples, conflicts, and adopting authority. Update canonical knowledge or playbook wording plus representative adverse evaluations. Select the semantically correct family version, validate all file hashes and package digest, integrate through review, and create an immutable annotated release. Preserve every earlier release. Do not adopt it into any agent automatically.

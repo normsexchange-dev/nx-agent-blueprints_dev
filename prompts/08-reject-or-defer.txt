@@ -1,0 +1,5 @@
+REJECT OR DEFER A FAMILY UPDATE
+
+DO NOT EXECUTE UNLESS the sovereign owner has reviewed the exact update comparison.
+
+Choose reject, defer, or remain on current. Append the decision with exact previous and proposed releases, compatibility evidence, unresolved divergence, rationale, and review time. Keep the current immutable pin and preserve individual identity, history, memory, and local adaptations. Do not alter the publisher's release.

@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.0/schemas/agent-manifest.schema.json",
+  "title": "NX proposed individual agent manifest", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "agent_id", "environment_id", "parent_agent", "family_provenance", "specializations", "instruction_precedence", "individual_memory_imported", "external_permissions_granted", "standing_mission", "activation_state", "created_at"],
+  "properties": {"schema_version": {"const": "1.0.0"}, "agent_id": {"type": "string"}, "environment_id": {"type": "string"}, "parent_agent": {"type": ["object", "null"]}, "family_provenance": {"type": "object"}, "specializations": {"type": "array"}, "instruction_precedence": {"type": "array"}, "individual_memory_imported": {"const": false}, "external_permissions_granted": {"const": false}, "standing_mission": {"type": "null"}, "activation_state": {"const": "proposed_only"}, "created_at": {"type": "string", "format": "date-time"}}
+}

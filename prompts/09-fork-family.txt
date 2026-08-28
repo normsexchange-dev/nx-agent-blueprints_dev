@@ -1,0 +1,5 @@
+FORK AN AGENT FAMILY
+
+DO NOT EXECUTE UNLESS the new sovereign publisher authorizes a distinct family and has reviewed source provenance and applicable terms.
+
+Record the source family, exact release and digest, new owner, distinct family ID, divergence reason, inherited files, and replaced files. Preserve the parent unchanged, remove private or credential material, add evaluations for divergence, and publish only under the new owner's authority.

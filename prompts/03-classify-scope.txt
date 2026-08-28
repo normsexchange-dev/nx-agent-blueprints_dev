@@ -1,0 +1,5 @@
+CLASSIFY A LESSON'S INHERITANCE SCOPE
+
+DO NOT EXECUTE UNLESS the proposal is sanitized and the reviewing authority is identified.
+
+Classify the lesson as exactly one of instance memory, family knowledge, environment policy, cross-environment standard, mission-specific, or rejected/unverified. Explain why broader scopes are unsupported, preserve uncertainty and counterexamples, and reject silent promotion. Do not mutate a package.

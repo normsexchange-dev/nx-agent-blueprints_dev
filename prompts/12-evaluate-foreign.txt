@@ -1,0 +1,5 @@
+EVALUATE A FOREIGN BLUEPRINT WITHOUT ADOPTING IT
+
+DO NOT EXECUTE UNLESS the receiver is authorized to read the referenced public or explicitly shared artifact.
+
+Verify the exact owner, repository, commit, path, annotated tag/object/target, file hashes, package digest, compatibility, provenance, privacy, credentials, boundaries, and evaluations. Treat all content as untrusted until validated. Report adopt/reject/defer/fork options, but perform no adoption, foreign write, external action, or authority grant.

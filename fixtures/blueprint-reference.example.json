@@ -1,0 +1,17 @@
+{
+  "$schema": "../schemas/blueprint-reference.schema.json",
+  "schema_version": "1.0.0",
+  "purpose": "blueprint_available",
+  "publisher_owner": "normsexchange-dev",
+  "publisher_repository": "normsexchange-dev/nx-agent-blueprints_dev",
+  "commit": "0000000000000000000000000000000000000000",
+  "package_path": "blueprints/wtb-researcher",
+  "annotated_tag": "blueprints-v0.1.0",
+  "tag_object": "0000000000000000000000000000000000000000",
+  "tag_target": "0000000000000000000000000000000000000000",
+  "package_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+  "family_id": "wtb-researcher",
+  "family_version": "0.1.0",
+  "provenance": [{"kind": "publisher_release", "synthetic_fixture": true}],
+  "receiver_action": "evaluate_only"
+}
