@@ -4,8 +4,8 @@
     "repository": "normsexchange-dev/nx-codex-communications_dev",
     "version": "0.6.0",
     "tag": "communications-v0.6.0",
-    "tag_object": "500db28fa1f0dc6b5768e717202cf5b2af0daf7b",
-    "tag_target": "9a545b09ccffb5ac1f65633f0e0fe74794beca62"
+    "tag_object": "500d084b11d5b979a05c583e5ce401683e4f0aa0",
+    "tag_target": "9a545b4f96d6cce713e9ab1d8e46aea65b387ac7"
   },
   "sourcing_contract": {
     "repository": "normsexchange-dev/nx-sourcing-contracts_dev",

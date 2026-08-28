@@ -6,8 +6,8 @@ import { fileURLToPath } from 'node:url';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const SOURCE_REPOSITORY = 'normsexchange-dev/nx-agent-blueprints_dev';
-export const RELEASE_TAG = 'blueprints-v0.1.0';
-export const VERSION = '0.1.0';
+export const RELEASE_TAG = 'blueprints-v0.1.1';
+export const VERSION = '0.1.1';
 export const PRECEDENCE = [
   'platform/system constraints',
   'repository-owner policy and capability authority',
@@ -44,7 +44,7 @@ export function sha256(value) {
 export async function walk(directory, relative = '') {
   const output = [];
   for (const entry of await readdir(directory, { withFileTypes: true })) {
-    if (['.git', 'node_modules', '.tmp'].includes(entry.name)) continue;
+    if (['.git', 'node_modules', '.tmp', '.dependency-checkouts'].includes(entry.name)) continue;
     const child = relative ? `${relative}/${entry.name}` : entry.name;
     if (entry.isDirectory()) output.push(...await walk(path.join(directory, entry.name), child));
     else if (entry.isFile()) output.push(child.replaceAll('\\', '/'));

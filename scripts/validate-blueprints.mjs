@@ -10,7 +10,7 @@ const REQUIRED = [
   'schemas/family-blueprint.schema.json', 'schemas/family-registry.schema.json', 'schemas/learning-proposal.schema.json',
   'schemas/agent-instantiation-proposal.schema.json', 'schemas/agent-manifest.schema.json', 'schemas/adoption-record.schema.json',
   'schemas/fork.schema.json', 'schemas/specialization.schema.json', 'schemas/blueprint-reference.schema.json', 'schemas/rendered-bundle.schema.json',
-  'scripts/lib/blueprints.mjs', 'scripts/prepare-package.mjs', 'scripts/validate-blueprints.mjs', 'scripts/validate-release.mjs',
+  'scripts/lib/blueprints.mjs', 'scripts/prepare-package.mjs', 'scripts/validate-blueprints.mjs', 'scripts/validate-release.mjs', 'scripts/verify-dependency-tags.mjs',
   'scripts/render-family.mjs', 'scripts/materialize-agent.mjs', 'scripts/compare-agent-update.mjs', 'scripts/record-adoption.mjs',
   'scripts/validate-learning-proposal.mjs', 'scripts/propose-learning-promotion.mjs', 'scripts/propose-fork.mjs', 'scripts/propose-specialization.mjs',
   'scripts/validate-blueprint-reference.mjs', 'scripts/resolve-family.mjs', 'tests/blueprints.test.mjs'
@@ -41,11 +41,11 @@ async function main() {
   assert(registry.schema_version === '1.0.0' && registry.families.length === 1, 'family_registry_invalid');
   const registered = registry.families[0];
   assert(registered.family_id === 'wtb-researcher' && registered.lifecycle_state === 'stable' && registered.current_stable_version === VERSION, 'reference_family_registry_invalid');
-  assert(registered.immutable_tags.length === 1 && registered.immutable_tags[0] === RELEASE_TAG, 'registry_immutable_tag_invalid');
+  assert(registered.immutable_tags.length === 2 && registered.immutable_tags.includes('blueprints-v0.1.0') && registered.immutable_tags.includes(RELEASE_TAG), 'registry_immutable_tag_invalid');
   await validateFamily('wtb-researcher');
 
   const dependencies = await readJson(path.join(ROOT, 'dependencies.json'));
-  assert(dependencies.communications.tag === 'communications-v0.6.0' && dependencies.communications.tag_object === '500db28fa1f0dc6b5768e717202cf5b2af0daf7b' && dependencies.communications.tag_target === '9a545b09ccffb5ac1f65633f0e0fe74794beca62', 'communications_dependency_invalid');
+  assert(dependencies.communications.tag === 'communications-v0.6.0' && dependencies.communications.tag_object === '500d084b11d5b979a05c583e5ce401683e4f0aa0' && dependencies.communications.tag_target === '9a545b4f96d6cce713e9ab1d8e46aea65b387ac7', 'communications_dependency_invalid');
   assert(dependencies.sourcing_contract.tag === 'contract-v0.2.0' && dependencies.sourcing_contract.tag_object === 'a3c60a04ef20ecbb70d0a705d4256f2e70651f39' && dependencies.sourcing_contract.tag_target === '712c07d76b1d1b60b04a8bf4dc2f041536e4a11f', 'sourcing_contract_dependency_invalid');
 
   const prompts = files.filter((item) => item.startsWith('prompts/') && item.endsWith('.txt'));

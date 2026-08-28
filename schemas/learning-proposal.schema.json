@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.0/schemas/learning-proposal.schema.json",
+  "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.1/schemas/learning-proposal.schema.json",
   "title": "NX learning proposal",
   "type": "object", "additionalProperties": false,
   "required": ["$schema", "schema_version", "proposal_id", "proposing_environment", "proposing_agent", "target_scope", "target_family", "observation", "evidence_references", "provenance_classification", "confidence", "known_counterexamples", "conflict_analysis", "privacy_review", "credential_review", "proposed_wording", "affected_playbook_sections", "proposed_evaluation_changes", "disposition", "adopting_authority", "release_containing_lesson"],

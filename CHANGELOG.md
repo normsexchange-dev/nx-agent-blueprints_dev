@@ -2,7 +2,11 @@
 
 ## Unreleased
 
-- Corrected the Actions checkout harness to fetch the exact annotated tag object and added a manual immutable-release validation entry point; family package `0.1.0` remains unchanged.
+## 0.1.1 — 2026-08-28
+
+- Corrected the `communications-v0.6.0` annotated tag object and target to authoritative Git values `500d084b11d5b979a05c583e5ce401683e4f0aa0` and `9a545b4f96d6cce713e9ab1d8e46aea65b387ac7`.
+- Added deterministic verification of checked-out dependency tag objects and targets in local validation and GitHub Actions.
+- Corrected the Actions checkout harness to fetch exact annotated tag objects and retained `0.1.0` unchanged as immutable history.
 
 ## 0.1.0 — 2026-08-28
 

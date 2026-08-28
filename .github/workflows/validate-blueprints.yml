@@ -27,6 +27,22 @@ jobs:
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: '24'
+      - name: Check out immutable communications dependency
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: normsexchange-dev/nx-codex-communications_dev
+          ref: communications-v0.6.0
+          path: .dependency-checkouts/communications
+          fetch-depth: 0
+          fetch-tags: true
+      - name: Check out immutable sourcing-contract dependency
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: normsexchange-dev/nx-sourcing-contracts_dev
+          ref: contract-v0.2.0
+          path: .dependency-checkouts/contract
+          fetch-depth: 0
+          fetch-tags: true
       - name: Validate deterministic blueprint foundation
         shell: bash
         env:
@@ -36,6 +52,9 @@ jobs:
           release_tag="${NX_INPUT_RELEASE_TAG}"
           if [[ -z "${release_tag}" && "${GITHUB_REF_TYPE}" == "tag" ]]; then release_tag="${GITHUB_REF_NAME}"; fi
           if [[ -n "${release_tag}" ]]; then git fetch --force origin "refs/tags/${release_tag}:refs/tags/${release_tag}"; fi
+          git -C .dependency-checkouts/communications fetch --force origin refs/tags/communications-v0.6.0:refs/tags/communications-v0.6.0
+          git -C .dependency-checkouts/contract fetch --force origin refs/tags/contract-v0.2.0:refs/tags/contract-v0.2.0
           node scripts/validate-blueprints.mjs --branch "${NX_VALIDATION_BRANCH}"
+          node scripts/verify-dependency-tags.mjs --communications .dependency-checkouts/communications --contract .dependency-checkouts/contract
           node --test tests/*.test.mjs
           if [[ -n "${release_tag}" ]]; then node scripts/validate-release.mjs --tag "${release_tag}"; fi

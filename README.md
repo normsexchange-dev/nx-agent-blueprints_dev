@@ -1,6 +1,6 @@
 # NX Agent Blueprints
 
-NX Agent Blueprints is a public, vendor-neutral contract for publishing durable agent-family knowledge without publishing credentials, private memory, operational history, or authority. Release `0.1.0` is the nonoperational reference foundation for sovereign environments.
+NX Agent Blueprints is a public, vendor-neutral contract for publishing durable agent-family knowledge without publishing credentials, private memory, operational history, or authority. Release `0.1.1` is the nonoperational reference foundation for sovereign environments.
 
 The inheritance chain is:
 
@@ -31,10 +31,10 @@ node scripts/validate-blueprints.mjs --branch main
 node --test tests/*.test.mjs
 ```
 
-Release validation must run from an exact checkout of annotated tag `blueprints-v0.1.0`:
+Release validation must run from an exact checkout of annotated tag `blueprints-v0.1.1`:
 
 ```sh
-node scripts/validate-release.mjs --tag blueprints-v0.1.0
+node scripts/validate-release.mjs --tag blueprints-v0.1.1
 ```
 
 No package install, model call, network request, credential, or mutable `main` reference is required.

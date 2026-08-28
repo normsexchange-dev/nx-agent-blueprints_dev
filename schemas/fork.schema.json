@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.0/schemas/fork.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.1/schemas/fork.schema.json",
   "title": "NX family fork proposal", "type": "object", "additionalProperties": false,
   "required": ["schema_version", "source_family", "source_release", "source_digest", "new_owner", "new_family_id", "divergence_reason", "inherited_files", "replaced_files"],
   "properties": {"schema_version": {"const": "1.0.0"}, "source_family": {"type": "string"}, "source_release": {"type": "string"}, "source_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "new_owner": {"type": "string"}, "new_family_id": {"type": "string"}, "divergence_reason": {"type": "string"}, "inherited_files": {"type": "array"}, "replaced_files": {"type": "array"}}
