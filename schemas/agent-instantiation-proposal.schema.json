@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.0/schemas/agent-instantiation-proposal.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.1/schemas/agent-instantiation-proposal.schema.json",
   "title": "NX agent instantiation proposal", "type": "object", "additionalProperties": false,
   "required": ["schema_version", "environment_genesis", "destination_environment_id", "new_agent_id", "parent_agent", "family", "specializations", "creation_time", "runtime_adapter", "activate"],
   "properties": {"schema_version": {"const": "1.0.0"}, "environment_genesis": {"type": "object"}, "destination_environment_id": {"type": "string"}, "new_agent_id": {"type": "string"}, "parent_agent": {"type": ["object", "null"]}, "family": {"type": "object"}, "specializations": {"type": "array", "items": {"type": "object"}}, "creation_time": {"type": "string", "format": "date-time"}, "runtime_adapter": {"enum": ["neutral", "codex", "gemini", "claude"]}, "activate": {"const": false}}

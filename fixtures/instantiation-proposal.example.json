@@ -2,7 +2,7 @@
   "$schema": "../schemas/agent-instantiation-proposal.schema.json",
   "schema_version": "1.0.0",
   "environment_genesis": {
-    "canonical_release": {"tag": "communications-v0.6.0", "tag_object": "500db28fa1f0dc6b5768e717202cf5b2af0daf7b", "tag_target": "9a545b09ccffb5ac1f65633f0e0fe74794beca62"}
+    "canonical_release": {"tag": "communications-v0.6.0", "tag_object": "500d084b11d5b979a05c583e5ce401683e4f0aa0", "tag_target": "9a545b4f96d6cce713e9ab1d8e46aea65b387ac7"}
   },
   "destination_environment_id": "example-sovereign-environment",
   "new_agent_id": "fixture-wtb-researcher-001",
@@ -10,7 +10,7 @@
   "family": {
     "owner": "normsexchange-dev",
     "repository": "normsexchange-dev/nx-agent-blueprints_dev",
-    "tag": "blueprints-v0.1.0",
+    "tag": "blueprints-v0.1.1",
     "tag_object": "0000000000000000000000000000000000000000",
     "tag_target": "0000000000000000000000000000000000000000",
     "package_digest": "0000000000000000000000000000000000000000000000000000000000000000"
