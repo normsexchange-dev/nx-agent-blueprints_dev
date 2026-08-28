@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Corrected the Actions checkout harness to fetch the exact annotated tag object and added a manual immutable-release validation entry point; family package `0.1.0` remains unchanged.
+
 ## 0.1.0 — 2026-08-28
 
 - Defined sovereign agent-family inheritance, precedence, lifecycle, release, and adoption semantics.
