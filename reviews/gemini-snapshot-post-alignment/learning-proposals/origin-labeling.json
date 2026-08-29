@@ -1,0 +1,53 @@
+{
+  "$schema": "../../../schemas/learning-proposal.schema.json",
+  "schema_version": "1.0.0",
+  "proposal_id": "gemini-origin-labeling-001",
+  "proposing_environment": "normsexchange-dev",
+  "proposing_agent": "STOVE2_FRONTEND",
+  "target_scope": "family_knowledge",
+  "target_family": "wtb-researcher",
+  "observation": "The source visibly distinguishes machine-produced material, and the existing family already distinguishes conservative claim states.",
+  "evidence_references": [
+    {"source_kind": "immutable_public_git", "path": "DURABLE_KNOWLEDGE.md", "sha256_lf": "b71bdb9f09c468214ad42552743e45ee4bebe59b165e1cdd10ddf2af132604a0"},
+    {"source_kind": "immutable_public_git", "path": "src/components/EquipmentCard.tsx", "sha256_lf": "2eec3c01ec1643aa52d9e0cccdf7bcf93c14e3ea280903edbe39635d29823a70"},
+    {"source_kind": "immutable_public_git", "path": "src/components/MatchArbitrageConsole.tsx", "sha256_lf": "491be1397a5a19d84c5745a921c4e3c008bd13f0ab24e392dd1dde6f314bb356"}
+  ],
+  "provenance_classification": "instruction",
+  "confidence": 0.9,
+  "known_counterexamples": ["A machine-origin label can coexist with fabricated or unverified content and therefore does not prove the claim."],
+  "conflict_analysis": "The source's visible labeling is useful, while some labeled source content remains synthetic or simulated. The positions coexist only when labeling preserves provenance without upgrading evidence or status.",
+  "privacy_review": "pass",
+  "credential_review": "pass",
+  "proposed_wording": "Every machine-generated, synthetic, simulated, or inferred artifact must retain a visible origin class and conservative claim state; the label never upgrades evidence, admission, verification, publication, or authority.",
+  "affected_playbook_sections": ["source capture", "proposal output", "claim-state separation"],
+  "proposed_evaluation_changes": ["Reject unlabeled machine-origin output.", "Reject any attempt to use an origin label as an evidence upgrade."],
+  "disposition": "promoted",
+  "adopting_authority": "normsexchange-dev blueprint-release review",
+  "release_containing_lesson": "blueprints-v0.2.0",
+  "foreign_source": {
+    "environment_id": "gemini-sandbox-legacy",
+    "publisher_owner": "normsexchange-gemini",
+    "repository": "normsexchange-gemini/nx-gemini-communications_dev",
+    "repository_id": "1346945284",
+    "visibility": "public",
+    "commit": "857111e7c39b355e3a7f6f999c6997a5449424d7",
+    "tree": "58f01277d3ef07ae052ba1d49c69d58dffb2e809",
+    "tag": "snapshot-post-alignment",
+    "tag_object": "98db76569ee59266f0d9e914cb06280041e7fa02",
+    "tag_target": "857111e7c39b355e3a7f6f999c6997a5449424d7",
+    "source_paths": ["DURABLE_KNOWLEDGE.md", "src/components/EquipmentCard.tsx", "src/components/MatchArbitrageConsole.tsx"]
+  },
+  "source_review": {
+    "original_publisher": "normsexchange-gemini",
+    "source_classification": "supported procedure generalized by independent Codex review",
+    "first_known_at": "2026-08-29T01:07:22Z",
+    "last_reviewed_at": "2026-08-29T02:00:00Z",
+    "privacy_classification": "sanitized general rule",
+    "source_credential_review": "unknown",
+    "synthetic_or_simulated_status": "mixed",
+    "independently_validated": true,
+    "adverse_evaluations": ["missing-origin-label", "origin-label-as-evidence-upgrade"],
+    "compatibility_impact": "minor",
+    "broader_scope_limitations": "The rule belongs only to evidence-handling behavior; it imports no source identity, record, permission, mission, tool, or environment policy."
+  }
+}

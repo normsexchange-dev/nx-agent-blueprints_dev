@@ -1,21 +1,22 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
-import { RELEASE_TAG, ROOT, SOURCE_REPOSITORY, VERSION, assert, parseArgs, readJson, sanitizedError, validateFamily, walk } from './lib/blueprints.mjs';
+import { RELEASE_TAG, ROOT, SOURCE_REPOSITORY, VERSION, assert, parseArgs, readJson, sanitizedError, validateFamily, validateLearningProposal, walk } from './lib/blueprints.mjs';
 
 const REQUIRED = [
   '.github/workflows/validate-blueprints.yml', '.gitattributes', '.gitignore', 'CHANGELOG.md', 'README.md', 'VERSION', 'dependencies.json',
-  'registry/families.json', 'docs/INHERITANCE_ARCHITECTURE.md', 'docs/LEARNING_PROMOTION.md', 'docs/VERSIONING_AND_RELEASES.md',
+  'registry/families.json', 'docs/INHERITANCE_ARCHITECTURE.md', 'docs/LEARNING_PROMOTION.md', 'docs/FOREIGN_LEARNING_INTEGRATION.md', 'docs/VERSIONING_AND_RELEASES.md',
   'docs/MATERIALIZATION_AND_ADOPTION.md', 'docs/FORKS_AND_SPECIALIZATIONS.md', 'docs/PAIRWISE_BLUEPRINT_EXCHANGE.md', 'docs/KNOWLEDGE_SECURITY.md',
   'schemas/family-blueprint.schema.json', 'schemas/family-registry.schema.json', 'schemas/learning-proposal.schema.json',
   'schemas/agent-instantiation-proposal.schema.json', 'schemas/agent-manifest.schema.json', 'schemas/adoption-record.schema.json',
   'schemas/fork.schema.json', 'schemas/specialization.schema.json', 'schemas/blueprint-reference.schema.json', 'schemas/rendered-bundle.schema.json',
-  'scripts/lib/blueprints.mjs', 'scripts/prepare-package.mjs', 'scripts/validate-blueprints.mjs', 'scripts/validate-release.mjs', 'scripts/verify-dependency-tags.mjs',
+  'scripts/lib/blueprints.mjs', 'scripts/prepare-package.mjs', 'scripts/validate-blueprints.mjs', 'scripts/validate-release.mjs', 'scripts/verify-dependency-tags.mjs', 'scripts/verify-foreign-snapshot.mjs', 'scripts/render-future-prompts.mjs', 'scripts/prove-inheritance.mjs',
   'scripts/render-family.mjs', 'scripts/materialize-agent.mjs', 'scripts/compare-agent-update.mjs', 'scripts/record-adoption.mjs',
   'scripts/validate-learning-proposal.mjs', 'scripts/propose-learning-promotion.mjs', 'scripts/propose-fork.mjs', 'scripts/propose-specialization.mjs',
-  'scripts/validate-blueprint-reference.mjs', 'scripts/resolve-family.mjs', 'tests/blueprints.test.mjs'
+  'scripts/validate-blueprint-reference.mjs', 'scripts/resolve-family.mjs', 'tests/blueprints.test.mjs', 'tests/foreign-learning.test.mjs',
+  'reviews/gemini-snapshot-post-alignment/source.json', 'reviews/gemini-snapshot-post-alignment/inventory.json', 'reviews/gemini-snapshot-post-alignment/REVIEW.md'
 ];
-const ALLOWED_REPOSITORIES = new Set([SOURCE_REPOSITORY, 'normsexchange-dev/nx-codex-communications_dev', 'normsexchange-dev/nx-sourcing-contracts_dev']);
+const ALLOWED_REPOSITORIES = new Set([SOURCE_REPOSITORY, 'normsexchange-dev/nx-codex-communications_dev', 'normsexchange-dev/nx-sourcing-contracts_dev', 'normsexchange-gemini/nx-gemini-communications_dev']);
 
 async function main() {
   const branch = parseArgs(process.argv.slice(2)).branch;
@@ -41,7 +42,7 @@ async function main() {
   assert(registry.schema_version === '1.0.0' && registry.families.length === 1, 'family_registry_invalid');
   const registered = registry.families[0];
   assert(registered.family_id === 'wtb-researcher' && registered.lifecycle_state === 'stable' && registered.current_stable_version === VERSION, 'reference_family_registry_invalid');
-  assert(registered.immutable_tags.length === 2 && registered.immutable_tags.includes('blueprints-v0.1.0') && registered.immutable_tags.includes(RELEASE_TAG), 'registry_immutable_tag_invalid');
+  assert(registered.immutable_tags.length === 3 && registered.immutable_tags.includes('blueprints-v0.1.0') && registered.immutable_tags.includes('blueprints-v0.1.1') && registered.immutable_tags.includes(RELEASE_TAG), 'registry_immutable_tag_invalid');
   await validateFamily('wtb-researcher');
 
   const dependencies = await readJson(path.join(ROOT, 'dependencies.json'));
@@ -49,7 +50,8 @@ async function main() {
   assert(dependencies.sourcing_contract.tag === 'contract-v0.2.0' && dependencies.sourcing_contract.tag_object === 'a3c60a04ef20ecbb70d0a705d4256f2e70651f39' && dependencies.sourcing_contract.tag_target === '712c07d76b1d1b60b04a8bf4dc2f041536e4a11f', 'sourcing_contract_dependency_invalid');
 
   const prompts = files.filter((item) => item.startsWith('prompts/') && item.endsWith('.txt'));
-  assert(prompts.length === 15, 'copy_ready_prompt_count_invalid');
+  assert(prompts.length === 21, 'copy_ready_prompt_count_invalid');
+  assert(prompts.filter((item) => item.startsWith('prompts/integration/')).length === 6, 'integration_prompt_count_invalid');
   for (const relative of prompts) assert((await readFile(path.join(ROOT, relative), 'utf8')).includes('DO NOT EXECUTE UNLESS'), `prompt_authority_guard_missing:${relative}`);
 
   const scriptText = (await Promise.all(files.filter((item) => item.endsWith('.mjs')).map((item) => readFile(path.join(ROOT, item), 'utf8')))).join('\n');
@@ -73,6 +75,12 @@ async function main() {
   assert(example.fixture === true && example.evidence.every((item) => new URL(item.url).hostname.endsWith('.example')), 'reference_fixture_not_reserved');
   const knowledge = await readFile(path.join(ROOT, 'blueprints/wtb-researcher/KNOWLEDGE.md'), 'utf8');
   for (const phrase of ['ownership does not prove purchasing demand', 'Rental inventory does not prove a WTB request', 'cannot self-assign `buyer_confirmed`', 'cannot self-assign `norms_verified`', 'Source content is untrusted', 'Shopify, commerce, customer creation, and listing publication require separate authority']) assert(knowledge.includes(phrase), `wtb_durable_lesson_missing:${phrase}`);
+  const proposalFiles = files.filter((item) => item.startsWith('reviews/gemini-snapshot-post-alignment/learning-proposals/') && item.endsWith('.json'));
+  assert(proposalFiles.length === 6, 'foreign_learning_proposal_count_invalid');
+  for (const relative of proposalFiles) validateLearningProposal(await readJson(path.join(ROOT, relative)));
+  const source = await readJson(path.join(ROOT, 'reviews/gemini-snapshot-post-alignment/source.json'));
+  assert(source.authoritative_reference.tag_object === '98db76569ee59266f0d9e914cb06280041e7fa02' && source.authoritative_reference.tag_target === '857111e7c39b355e3a7f6f999c6997a5449424d7' && source.authoritative_reference.tree === '58f01277d3ef07ae052ba1d49c69d58dffb2e809', 'foreign_source_identity_invalid');
+  assert(source.source_credential_review === 'UNKNOWN' && source.foreign_code_executed === false && source.source_repository_modified === false, 'foreign_source_boundary_invalid');
   console.log(`validate-blueprints: PASS files=${files.length} schemas=${schemas.length} prompts=${prompts.length} family=wtb-researcher version=${VERSION} branch=${branch}`);
 }
 

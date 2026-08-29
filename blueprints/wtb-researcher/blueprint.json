@@ -8,7 +8,7 @@
     "owner": "normsexchange-dev",
     "repository": "normsexchange-dev/nx-agent-blueprints_dev"
   },
-  "family_version": "0.1.1",
+  "family_version": "0.2.0",
   "lifecycle_state": "stable",
   "purpose": "Research evidence-backed demand for professional motion-picture production equipment.",
   "nonpurpose": [
@@ -88,32 +88,34 @@
     ],
     "evaluation": [
       "EVALUATION.md",
-      "tests/evaluations.json"
+      "tests/evaluations.json",
+      "tests/foreign-learning-adverse.json"
     ],
     "examples": [
       "examples/fictional-research-candidate.json"
     ]
   },
   "file_hashes": {
-    "BOUNDARIES.md": "90cfb3d5a77487cedfe302639092a4505447cf601a6ea3e1c20752e7844e5036",
-    "CHANGELOG.md": "08b8681e4fb1b9f340b5b67767c3c4087bd915b0bf44ebb71cf8ef3c6635deb7",
-    "EVALUATION.md": "43ca12874b93f1d6f7360f920f0f42c7034aff9286cbc8f13472ef1702455293",
-    "KNOWLEDGE.md": "ad8ad37a8563edebc25597399a25a7a81418a1839798dd22354cdec4c25ed211",
-    "PLAYBOOK.md": "8f99a3c38fdd696e47154a93de7a520a351225375ec6eb909598ec9fe5b78e77",
+    "BOUNDARIES.md": "8af50cd621aa4db07a684446dce0ac55dabc5efef36dcc1d057a4e664c7d64c4",
+    "CHANGELOG.md": "8a0c87334327b3f597e0c2788999a940b4e06cc763620b897c0f63f9e45d5291",
+    "EVALUATION.md": "64a1e4caad50106fa6b1e47d20e56e154547ca742da5824513b5cd3015195780",
+    "KNOWLEDGE.md": "2d2027867d30542bfcb49a2c7154c4076c402cf578e5252fd388efb2ee2cf16d",
+    "PLAYBOOK.md": "3a76daf014a547e209e977e0f046b7dcfca383d6a6fdd0d67c8b57b57b867b92",
     "PURPOSE.md": "5a00190a14d92ba4733f7010f5bf0c88a3f009344b2c6829dc164c0533ba2f2c",
     "TOOLS.md": "e81107d74457816707ef3168c1daf58d006f2cdd6454c76975f352ff4276f459",
     "examples/fictional-research-candidate.json": "e4c4039374414cd162bf9e6b3db2a18ee908f141cb90bb3ec32639aa9f0b0074",
-    "schemas/research-candidate.schema.json": "c71867a46f9d9106e2d55ab594ca196a0e063630a6014a5e2cf62597c1ab82cc",
-    "tests/evaluations.json": "edcc9ad4c2353bf3614dced87d568eaab400176af479a65d9f896afb5802b3c9"
+    "schemas/research-candidate.schema.json": "53de0a628cd0ef36ab052883bed20f2e43fc420781bfa98f5ef6f30825a0cef1",
+    "tests/evaluations.json": "f2aac37f8503617faa2be2df7afaae3ba458e46a73fdfb45af1cb31239739599",
+    "tests/foreign-learning-adverse.json": "c7992955ae1f4c1aa3ed4cb73d75b790e0ee86ddb37b3f65c546678a23863648"
   },
   "release": {
-    "tag": "blueprints-v0.1.1",
+    "tag": "blueprints-v0.2.0",
     "tag_object": "resolve-from-annotated-tag",
     "tag_target": "resolve-from-annotated-tag",
-    "package_digest": "708bd430ad513e55eab7d3a225c318ad9f50eb07565b0d746c08896285fe8c31"
+    "package_digest": "b8c4c52aa856f7200f0386a5ae7dd6624b5d03dcfb95913787e4dd95b50b4f6c"
   },
-  "superseded_release": "blueprints-v0.1.0",
+  "superseded_release": "blueprints-v0.1.1",
   "deprecation": null,
   "created_at": "2026-08-28T00:00:00Z",
-  "updated_at": "2026-08-28T09:44:00Z"
+  "updated_at": "2026-08-29T02:00:00Z"
 }

@@ -82,6 +82,7 @@ test('all runtime adapters preserve canonical purpose, boundaries, provenance, a
     assert.match(bundle.sections.purpose, /professional motion-picture production equipment/);
     assert.match(bundle.sections.boundaries, /Required external authority/);
     assert.match(bundle.sections.knowledge, /source date when available/);
+    assert.match(bundle.sections.knowledge, /snapshot-post-alignment/);
     assert.equal(bundle.external_authority_granted, false);
   }
   for (const section of Object.keys(bundles[0].sections)) assert.deepEqual(bundles.map((bundle) => bundle.sections[section]), Array(4).fill(bundles[0].sections[section]));
@@ -92,6 +93,9 @@ test('all runtime adapters preserve canonical purpose, boundaries, provenance, a
 test('new-agent proposal inherits the pinned package but no identity, memory, credential, permission, transcript, reasoning, or mission', async () => {
   const bundle = await loadRenderedBundle('wtb-researcher', 'neutral');
   const proposal = await readJson(path.join(ROOT, 'fixtures/instantiation-proposal.example.json'));
+  proposal.family.tag = bundle.source_release;
+  proposal.family.tag_object = '0'.repeat(40);
+  proposal.family.tag_target = '1'.repeat(40);
   proposal.family.package_digest = bundle.package_digest;
   const evidence = { object: proposal.family.tag_object, target: proposal.family.tag_target };
   const first = await buildMaterialization(proposal, bundle, evidence);

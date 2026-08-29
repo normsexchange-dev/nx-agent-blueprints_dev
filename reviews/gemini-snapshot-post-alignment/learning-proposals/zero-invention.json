@@ -1,0 +1,53 @@
+{
+  "$schema": "../../../schemas/learning-proposal.schema.json",
+  "schema_version": "1.0.0",
+  "proposal_id": "gemini-zero-invention-001",
+  "proposing_environment": "normsexchange-dev",
+  "proposing_agent": "STOVE2_FRONTEND",
+  "target_scope": "family_knowledge",
+  "target_family": "wtb-researcher",
+  "observation": "The source states that missing facts must not be invented, corroborating the existing family and sourcing-contract rules.",
+  "evidence_references": [
+    {"source_kind": "immutable_public_git", "path": "DURABLE_KNOWLEDGE.md", "sha256_lf": "b71bdb9f09c468214ad42552743e45ee4bebe59b165e1cdd10ddf2af132604a0"},
+    {"source_kind": "canonical_family", "release": "blueprints-v0.1.1", "rule": "missingness preservation"},
+    {"source_kind": "canonical_contract", "release": "contract-v0.2.0", "rule": "claim-state and evidence preservation"}
+  ],
+  "provenance_classification": "instruction",
+  "confidence": 1,
+  "known_counterexamples": ["Selected source implementation supplies generated records and default progress values despite its stated rule."],
+  "conflict_analysis": "The publisher instruction and selected implementation conflict. Canonical Norms evidence resolves the family rule; Gemini is retained only as corroborating provenance, and no source record is promoted.",
+  "privacy_review": "pass",
+  "credential_review": "pass",
+  "proposed_wording": "Missing quantities, budgets, prices, timelines, organizations, contacts, demand, and progress remain missing; source-publisher corroboration does not replace canonical evidence or evaluation.",
+  "affected_playbook_sections": ["missing-value preservation", "conflict review"],
+  "proposed_evaluation_changes": ["Reject simulated or default progress values presented as observed facts.", "Exercise a publisher-rule and implementation conflict."],
+  "disposition": "promoted",
+  "adopting_authority": "normsexchange-dev blueprint-release review",
+  "release_containing_lesson": "blueprints-v0.2.0",
+  "foreign_source": {
+    "environment_id": "gemini-sandbox-legacy",
+    "publisher_owner": "normsexchange-gemini",
+    "repository": "normsexchange-gemini/nx-gemini-communications_dev",
+    "repository_id": "1346945284",
+    "visibility": "public",
+    "commit": "857111e7c39b355e3a7f6f999c6997a5449424d7",
+    "tree": "58f01277d3ef07ae052ba1d49c69d58dffb2e809",
+    "tag": "snapshot-post-alignment",
+    "tag_object": "98db76569ee59266f0d9e914cb06280041e7fa02",
+    "tag_target": "857111e7c39b355e3a7f6f999c6997a5449424d7",
+    "source_paths": ["DURABLE_KNOWLEDGE.md", "server/goals.ts", "scripts/generate_1000_film_catalog.cjs"]
+  },
+  "source_review": {
+    "original_publisher": "normsexchange-gemini",
+    "source_classification": "publisher instruction corroborated by canonical Norms rules",
+    "first_known_at": "2026-08-29T01:07:22Z",
+    "last_reviewed_at": "2026-08-29T02:00:00Z",
+    "privacy_classification": "sanitized general rule",
+    "source_credential_review": "unknown",
+    "synthetic_or_simulated_status": "mixed",
+    "independently_validated": true,
+    "adverse_evaluations": ["publisher-rule-implementation-conflict", "simulated-progress-not-fact"],
+    "compatibility_impact": "minor",
+    "broader_scope_limitations": "No generated source data, application defaults, totals, claims, identity, or environment behavior is inherited."
+  }
+}

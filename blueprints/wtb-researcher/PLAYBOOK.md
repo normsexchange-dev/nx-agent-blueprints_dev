@@ -7,8 +7,9 @@
 5. Preserve absent quantity, budget, currency, timeline, condition, and geography as missing rather than guessing.
 6. Normalize equipment identity without turning ambiguous names into facts.
 7. Link duplicate organizations deterministically and relate repeated requests as updates, possible duplicates, or distinct evidence; never silently collapse them.
-8. Produce a proposal using the immutable sourcing contract and retain its exact release provenance.
-9. Run adverse evaluations and flag conflicts, staleness, disappearing sources, self-citation, and synthetic evidence.
-10. Stop at the sovereign review boundary. Do not contact, confirm, verify, admit, publish, or mutate externally.
+8. Attach an explicit origin class (`human-authored`, `machine-generated`, `synthetic`, `simulated`, or `inferred`) and the conservative claim state to every displayed or exchanged artifact; never treat the label as evidence.
+9. Produce a proposal using the immutable sourcing contract and retain its exact release provenance.
+10. Run adverse evaluations and flag conflicts, staleness, disappearing sources, self-citation, synthetic evidence, simulated progress, and label-based status upgrades.
+11. Stop at the sovereign review boundary. Do not contact, confirm, verify, admit, publish, or mutate externally.
 
 Internal agents, roles, applications, schedules, indexes, simulations, memory, and subgoals are permitted only if a sovereign environment separately activates and authorizes them. This blueprint itself does not.

@@ -1,6 +1,6 @@
 # NX Agent Blueprints
 
-NX Agent Blueprints is a public, vendor-neutral contract for publishing durable agent-family knowledge without publishing credentials, private memory, operational history, or authority. Release `0.1.1` is the nonoperational reference foundation for sovereign environments.
+NX Agent Blueprints is a public, vendor-neutral contract for publishing durable agent-family knowledge without publishing credentials, private memory, operational history, or authority. Release `0.2.0` adds a governed foreign-learning review path while remaining a nonoperational reference foundation for sovereign environments.
 
 The inheritance chain is:
 
@@ -20,7 +20,8 @@ Lower layers add context but cannot silently override higher-authority boundarie
 - deterministic standard-library-only validators, renderers, proposal tools, and a reference materializer;
 - a registry resolving stable releases to immutable annotated tags;
 - one inactive `wtb-researcher` reference family using only reserved fictional fixtures;
-- fifteen copy-ready workflow prompts.
+- fifteen core workflow prompts and six foreign-learning integration prompts.
+- an immutable-source verifier and a public-safe review record for the Gemini `snapshot-post-alignment` evidence.
 
 The blueprint grants no external capability. It does not activate a mission, create an agent, contact anyone, admit business data, modify commerce systems, or grant repository access.
 
@@ -31,13 +32,15 @@ node scripts/validate-blueprints.mjs --branch main
 node --test tests/*.test.mjs
 ```
 
-Release validation must run from an exact checkout of annotated tag `blueprints-v0.1.1`:
+Release validation must run from an exact checkout of annotated tag `blueprints-v0.2.0`:
 
 ```sh
-node scripts/validate-release.mjs --tag blueprints-v0.1.1
+node scripts/validate-release.mjs --tag blueprints-v0.2.0
 ```
 
 No package install, model call, network request, credential, or mutable `main` reference is required.
+
+Foreign learning is reviewed from an exact annotated source snapshot without executing foreign code. A source environment retains ownership of its history, instance memory, policies, and applications; a Norms release retains both source-publisher provenance and the independent adopting review. See `docs/FOREIGN_LEARNING_INTEGRATION.md`.
 
 ## Runtime rendering and proposed materialization
 
@@ -48,6 +51,8 @@ node scripts/render-family.mjs --family wtb-researcher --adapter neutral --outpu
 ```
 
 The materializer accepts exact, prevalidated genesis and release inputs and writes only a proposed agent bundle into an explicit empty output directory. It never activates the proposal.
+
+From an exact release-tag checkout, `scripts/prove-inheritance.mjs` renders deterministic, fictional, inactive proposals for neutral, Codex, Gemini, and Claude adapters and records one proof digest per adapter. `scripts/render-future-prompts.mjs` resolves the six integration templates against the actual annotated tag object, target, and family package digest.
 
 ## Sovereignty
 
