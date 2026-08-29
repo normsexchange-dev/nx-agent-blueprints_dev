@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.1/schemas/adoption-record.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.2.0/schemas/adoption-record.schema.json",
   "title": "NX family adoption decision", "type": "object", "additionalProperties": false,
   "required": ["schema_version", "agent_id", "disposition", "previous_release", "proposed_release", "adopted_release", "adoption_commit", "adoption_time", "compatibility_result", "unresolved_divergence", "preserved_individual_identity", "preserved_individual_history"],
   "properties": {"schema_version": {"const": "1.0.0"}, "agent_id": {"type": "string"}, "disposition": {"enum": ["adopt", "reject", "defer", "remain_on_current", "fork", "create_specialization"]}, "previous_release": {"type": "string"}, "proposed_release": {"type": "string"}, "adopted_release": {"type": ["string", "null"]}, "adoption_commit": {"type": ["string", "null"]}, "adoption_time": {"type": "string"}, "compatibility_result": {"type": "string"}, "unresolved_divergence": {"type": "array"}, "preserved_individual_identity": {"const": true}, "preserved_individual_history": {"const": true}}

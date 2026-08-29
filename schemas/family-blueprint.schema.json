@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.1/schemas/family-blueprint.schema.json",
+  "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.2.0/schemas/family-blueprint.schema.json",
   "title": "NX agent-family blueprint manifest",
   "type": "object",
   "additionalProperties": false,

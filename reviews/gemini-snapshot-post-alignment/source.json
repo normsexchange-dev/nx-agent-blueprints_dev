@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "review_id": "gemini-snapshot-post-alignment",
+  "reviewed_at": "2026-08-29T02:00:00Z",
+  "environment_id": "gemini-sandbox-legacy",
+  "publisher_owner": "normsexchange-gemini",
+  "repository": "normsexchange-gemini/nx-gemini-communications_dev",
+  "repository_id": "1346945284",
+  "repository_node_id": "R_kgDOUEjBBA",
+  "visibility": "public",
+  "default_branch": "main",
+  "branches_observed": {
+    "main": "71e27ad91868dff800f1ad8224b499d17bca53cc",
+    "master": "857111e7c39b355e3a7f6f999c6997a5449424d7"
+  },
+  "authoritative_reference": {
+    "tag": "snapshot-post-alignment",
+    "tag_type": "annotated",
+    "tag_object": "98db76569ee59266f0d9e914cb06280041e7fa02",
+    "tag_target": "857111e7c39b355e3a7f6f999c6997a5449424d7",
+    "tree": "58f01277d3ef07ae052ba1d49c69d58dffb2e809",
+    "tree_entry_count": 77,
+    "commit_time": "2026-08-29T01:07:22Z"
+  },
+  "previous_review_baseline": {
+    "tag": "snapshot-pre-alignment",
+    "tag_type": "annotated",
+    "tag_object": "08400d37ec4eff309431158782b6410b3ef734c8",
+    "tag_target": "7c87b1e289324c41c218336e2967a8fd4b3dede3",
+    "tree": "b3ed62bdcf3d46ac4f25c82702dc69876df0b199"
+  },
+  "interface_introduction_commit": "8c33f879f80e30809478ef01665b7f5b8d042ab9",
+  "unavailable_non_source_commit": "c5ad16fc63e58efd6c0e26b2a36d3b09df4fcaf9",
+  "hash_normalization": "UTF-8 content with CRLF normalized to LF before SHA-256",
+  "changed_paths": [
+    ".nx/capabilities.json",
+    ".nx/environment.json",
+    ".nx/genesis.json",
+    ".nx/interoperability.json",
+    ".nx/lineage.json",
+    ".nx/provenance.json",
+    "DURABLE_KNOWLEDGE.md"
+  ],
+  "source_files": [
+    {"path": ".nx/capabilities.json", "sha256_lf": "508893b0ebc43ca9f74f1bfe2059bc4b81cf382b83f5313d7536eb054de8ad2d", "role": "changed"},
+    {"path": ".nx/environment.json", "sha256_lf": "09f40f7737d8bbca591363c22494a610e3315d5c50421bde8c34c416edebeb3b", "role": "changed"},
+    {"path": ".nx/genesis.json", "sha256_lf": "8ab95b01821e64a0af3b59484318697560afab5140674b1ceff9138d65e88262", "role": "changed"},
+    {"path": ".nx/interoperability.json", "sha256_lf": "fdf2f9c27e47f76013e3aa2cb0ce45c94e0701a16481b94ca9b18793ffb6cd85", "role": "changed"},
+    {"path": ".nx/lineage.json", "sha256_lf": "dcd922f342d9adf1309ead3e23823de5bfbc2b7026087df4ae115debb37f6ad4", "role": "changed"},
+    {"path": ".nx/provenance.json", "sha256_lf": "00beaf940719eeb51e7f914cb9286a26de966520644ab3302d3ff483e4261b40", "role": "changed"},
+    {"path": "DURABLE_KNOWLEDGE.md", "sha256_lf": "b71bdb9f09c468214ad42552743e45ee4bebe59b165e1cdd10ddf2af132604a0", "role": "changed"},
+    {"path": "AGENTS.md", "sha256_lf": "e7b2cb3678acd6249d4de64f7c169f38f05b819fec5899629febaf36f8db33ce", "role": "review_context"},
+    {"path": "EVOLUTION.md", "sha256_lf": "91bfbef09f8453168b63302a7bf35aa4920a1f17a481b75f23479fa6f7ebc0c2", "role": "review_context"},
+    {"path": "scripts/generate_1000_film_catalog.cjs", "sha256_lf": "b8dc3871c6bb94122780ccacc9ce2eac2fb46113c2341b7f73e1283ecf48045c", "role": "counterexample"},
+    {"path": "server.ts", "sha256_lf": "5e2603aa53acf04413ab18ca23ba5a94bd8719451af2804eb83bea976e00c6ef", "role": "review_context"},
+    {"path": "server/database.ts", "sha256_lf": "bca0a335280a7fa8c0a6c856c71d5955095ea640c16b2e7dabead6410225d8a8", "role": "review_context"},
+    {"path": "server/goals.ts", "sha256_lf": "7fe98e2d4ec3f79ecdda31db04d17c6b077374c4447c02e58a6ddeecc7321471", "role": "counterexample"},
+    {"path": "src/components/EquipmentCard.tsx", "sha256_lf": "2eec3c01ec1643aa52d9e0cccdf7bcf93c14e3ea280903edbe39635d29823a70", "role": "supporting_evidence"},
+    {"path": "src/components/GitOutboxConsole.tsx", "sha256_lf": "10e873a18814387fafbab68d29f7734a5abf61bfc24c45fd0e4feff70a92f84c", "role": "counterexample"},
+    {"path": "src/components/MatchArbitrageConsole.tsx", "sha256_lf": "491be1397a5a19d84c5745a921c4e3c008bd13f0ab24e392dd1dde6f314bb356", "role": "supporting_evidence"},
+    {"path": "src/data/initialNorms.ts", "sha256_lf": "f3d77add2d87064421f8342e676de55bfcf9e2003057fd0d230bfca3cafd43ad", "role": "counterexample"}
+  ],
+  "reported_validation": {
+    "communications": "communications-v0.6.0",
+    "genesis": "GENESIS_VALIDATED",
+    "interoperability": "INTERFACE_COMPATIBLE",
+    "service_health": "NOT_ASSESSED",
+    "github_actions": "NOT_RUN"
+  },
+  "independent_interface_verification": {
+    "genesis": "GENESIS_VALIDATED",
+    "interoperability": "INTERFACE_COMPATIBLE",
+    "negotiated_version": "0.5.0",
+    "environment_state": "UNKNOWN",
+    "credential_review": "UNKNOWN",
+    "external_access": "UNKNOWN",
+    "data_admission": "UNKNOWN",
+    "service_health": "NOT_ASSESSED"
+  },
+  "source_credential_review": "UNKNOWN",
+  "review_artifact_privacy": "PASS",
+  "review_artifact_credential_scan": "PASS",
+  "foreign_code_executed": false,
+  "source_repository_modified": false
+}

@@ -6,8 +6,8 @@ import { fileURLToPath } from 'node:url';
 
 export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 export const SOURCE_REPOSITORY = 'normsexchange-dev/nx-agent-blueprints_dev';
-export const RELEASE_TAG = 'blueprints-v0.1.1';
-export const VERSION = '0.1.1';
+export const RELEASE_TAG = 'blueprints-v0.2.0';
+export const VERSION = '0.2.0';
 export const PRECEDENCE = [
   'platform/system constraints',
   'repository-owner policy and capability authority',
@@ -174,7 +174,23 @@ export function validateLearningProposal(proposal) {
   assert(LEARNING_SCOPES.includes(proposal.target_scope), 'learning_scope_invalid');
   assert(KNOWLEDGE_CLASSES.includes(proposal.provenance_classification), 'learning_provenance_invalid');
   assert(proposal.privacy_review === 'pass' && proposal.credential_review === 'pass', 'learning_public_safety_review_failed');
-  assert(scanSensitive(`${proposal.observation}\n${proposal.proposed_wording}`).length === 0, 'learning_sensitive_material_rejected');
+  assert(scanSensitive(JSON.stringify(proposal)).length === 0, 'learning_sensitive_material_rejected');
+  if (proposal.foreign_source) {
+    for (const key of ['environment_id', 'publisher_owner', 'repository', 'repository_id', 'visibility', 'commit', 'tree', 'tag', 'tag_object', 'tag_target', 'source_paths']) assert(Object.hasOwn(proposal.foreign_source, key), `foreign_source_field_missing:${key}`);
+    assert(/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/.test(proposal.foreign_source.repository), 'foreign_source_repository_invalid');
+    assert(['public', 'private'].includes(proposal.foreign_source.visibility), 'foreign_source_visibility_invalid');
+    for (const key of ['commit', 'tree', 'tag_object', 'tag_target']) assert(/^[a-f0-9]{40}$/.test(proposal.foreign_source[key]), `foreign_source_${key}_invalid`);
+    assert(proposal.foreign_source.commit === proposal.foreign_source.tag_target, 'foreign_source_commit_target_mismatch');
+    nonemptyStrings(proposal.foreign_source.source_paths, 'foreign_source_paths_missing');
+    assert(proposal.source_review && typeof proposal.source_review === 'object', 'foreign_source_review_missing');
+    for (const key of ['original_publisher', 'source_classification', 'first_known_at', 'last_reviewed_at', 'privacy_classification', 'source_credential_review', 'synthetic_or_simulated_status', 'independently_validated', 'adverse_evaluations', 'compatibility_impact', 'broader_scope_limitations']) assert(Object.hasOwn(proposal.source_review, key), `foreign_source_review_field_missing:${key}`);
+    assert(['pass', 'fail', 'pending', 'unknown'].includes(proposal.source_review.source_credential_review), 'foreign_source_credential_review_invalid');
+    assert(['none', 'synthetic', 'simulated', 'mixed', 'unknown'].includes(proposal.source_review.synthetic_or_simulated_status), 'foreign_source_synthetic_review_invalid');
+    assert(['patch', 'minor', 'major', 'none', 'deferred'].includes(proposal.source_review.compatibility_impact), 'foreign_source_compatibility_invalid');
+    assert(typeof proposal.source_review.independently_validated === 'boolean', 'foreign_source_independent_review_invalid');
+    nonemptyStrings(proposal.source_review.adverse_evaluations, 'foreign_source_adverse_evaluations_missing');
+    assert(typeof proposal.source_review.broader_scope_limitations === 'string' && proposal.source_review.broader_scope_limitations.length > 0, 'foreign_source_scope_limit_missing');
+  }
   const independentEvidence = proposal.evidence_references.some((reference) => reference.source_kind !== 'agent_output' || reference.agent_id !== proposal.proposing_agent);
   if (proposal.evidence_references.length > 0) assert(independentEvidence, 'circular_self_citation_not_independent_evidence');
   if (proposal.provenance_classification === 'verified_fact') assert(proposal.evidence_references.length > 0, 'verified_fact_evidence_missing');

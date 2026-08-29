@@ -43,6 +43,15 @@ jobs:
           path: .dependency-checkouts/contract
           fetch-depth: 0
           fetch-tags: true
+      - name: Check out immutable public Gemini review source
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: normsexchange-gemini/nx-gemini-communications_dev
+          ref: snapshot-post-alignment
+          path: .dependency-checkouts/gemini-snapshot
+          fetch-depth: 0
+          fetch-tags: true
+          persist-credentials: false
       - name: Validate deterministic blueprint foundation
         shell: bash
         env:
@@ -54,7 +63,9 @@ jobs:
           if [[ -n "${release_tag}" ]]; then git fetch --force origin "refs/tags/${release_tag}:refs/tags/${release_tag}"; fi
           git -C .dependency-checkouts/communications fetch --force origin refs/tags/communications-v0.6.0:refs/tags/communications-v0.6.0
           git -C .dependency-checkouts/contract fetch --force origin refs/tags/contract-v0.2.0:refs/tags/contract-v0.2.0
+          git -C .dependency-checkouts/gemini-snapshot fetch --force origin refs/tags/snapshot-pre-alignment:refs/tags/snapshot-pre-alignment refs/tags/snapshot-post-alignment:refs/tags/snapshot-post-alignment
           node scripts/validate-blueprints.mjs --branch "${NX_VALIDATION_BRANCH}"
           node scripts/verify-dependency-tags.mjs --communications .dependency-checkouts/communications --contract .dependency-checkouts/contract
+          node scripts/verify-foreign-snapshot.mjs --repository .dependency-checkouts/gemini-snapshot
           node --test tests/*.test.mjs
           if [[ -n "${release_tag}" ]]; then node scripts/validate-release.mjs --tag "${release_tag}"; fi

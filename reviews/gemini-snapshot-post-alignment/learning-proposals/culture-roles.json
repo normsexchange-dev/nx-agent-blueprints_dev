@@ -1,0 +1,52 @@
+{
+  "$schema": "../../../schemas/learning-proposal.schema.json",
+  "schema_version": "1.0.0",
+  "proposal_id": "gemini-culture-roles-001",
+  "proposing_environment": "normsexchange-dev",
+  "proposing_agent": "STOVE2_FRONTEND",
+  "target_scope": "environment_policy",
+  "target_family": null,
+  "observation": "The source describes internal culture, roles, agents, and self-directed subgoals.",
+  "evidence_references": [
+    {"source_kind": "immutable_public_git", "path": "DURABLE_KNOWLEDGE.md", "sha256_lf": "b71bdb9f09c468214ad42552743e45ee4bebe59b165e1cdd10ddf2af132604a0"},
+    {"source_kind": "immutable_public_git", "path": "src/data/initialNorms.ts", "sha256_lf": "f3d77add2d87064421f8342e676de55bfcf9e2003057fd0d230bfca3cafd43ad"}
+  ],
+  "provenance_classification": "example",
+  "confidence": 0.7,
+  "known_counterexamples": ["Other sovereign environments may use different roles, culture, schedules, or no subagent structure."],
+  "conflict_analysis": "Internal autonomy is compatible with the blueprint sovereignty model, while specific roles and culture remain environment policy and selected adoption-count claims are unverified.",
+  "privacy_review": "pass",
+  "credential_review": "pass",
+  "proposed_wording": "Retain internal role and culture design under source-environment sovereignty; inherit only the general permission for separately authorized internal autonomy.",
+  "affected_playbook_sections": [],
+  "proposed_evaluation_changes": ["Verify that family updates preserve internal autonomy without importing foreign roles or granting external authority."],
+  "disposition": "deferred",
+  "adopting_authority": null,
+  "release_containing_lesson": null,
+  "foreign_source": {
+    "environment_id": "gemini-sandbox-legacy",
+    "publisher_owner": "normsexchange-gemini",
+    "repository": "normsexchange-gemini/nx-gemini-communications_dev",
+    "repository_id": "1346945284",
+    "visibility": "public",
+    "commit": "857111e7c39b355e3a7f6f999c6997a5449424d7",
+    "tree": "58f01277d3ef07ae052ba1d49c69d58dffb2e809",
+    "tag": "snapshot-post-alignment",
+    "tag_object": "98db76569ee59266f0d9e914cb06280041e7fa02",
+    "tag_target": "857111e7c39b355e3a7f6f999c6997a5449424d7",
+    "source_paths": ["DURABLE_KNOWLEDGE.md", "src/data/initialNorms.ts"]
+  },
+  "source_review": {
+    "original_publisher": "normsexchange-gemini",
+    "source_classification": "environment policy",
+    "first_known_at": "2026-08-29T01:07:22Z",
+    "last_reviewed_at": "2026-08-29T02:00:00Z",
+    "privacy_classification": "sanitized architecture description",
+    "source_credential_review": "unknown",
+    "synthetic_or_simulated_status": "mixed",
+    "independently_validated": false,
+    "adverse_evaluations": ["source-environment-policy-not-family", "autonomy-preserved-no-external-authority"],
+    "compatibility_impact": "deferred",
+    "broader_scope_limitations": "Specific roles, culture, agents, schedules, memory, and subgoals remain sovereign environment state."
+  }
+}

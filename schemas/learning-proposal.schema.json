@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.1/schemas/learning-proposal.schema.json",
+  "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.2.0/schemas/learning-proposal.schema.json",
   "title": "NX learning proposal",
   "type": "object", "additionalProperties": false,
   "required": ["$schema", "schema_version", "proposal_id", "proposing_environment", "proposing_agent", "target_scope", "target_family", "observation", "evidence_references", "provenance_classification", "confidence", "known_counterexamples", "conflict_analysis", "privacy_review", "credential_review", "proposed_wording", "affected_playbook_sections", "proposed_evaluation_changes", "disposition", "adopting_authority", "release_containing_lesson"],
@@ -13,6 +13,28 @@
     "confidence": {"type": "number", "minimum": 0, "maximum": 1}, "known_counterexamples": {"type": "array", "items": {"type": "string"}},
     "conflict_analysis": {"type": "string"}, "privacy_review": {"enum": ["pass", "fail", "pending"]}, "credential_review": {"enum": ["pass", "fail", "pending"]},
     "proposed_wording": {"type": "string"}, "affected_playbook_sections": {"type": "array", "items": {"type": "string"}}, "proposed_evaluation_changes": {"type": "array", "items": {"type": "string"}},
-    "disposition": {"enum": ["proposed", "approved", "rejected", "deferred", "promoted"]}, "adopting_authority": {"type": ["string", "null"]}, "release_containing_lesson": {"type": ["string", "null"]}
+    "disposition": {"enum": ["proposed", "approved", "rejected", "deferred", "promoted"]}, "adopting_authority": {"type": ["string", "null"]}, "release_containing_lesson": {"type": ["string", "null"]},
+    "foreign_source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["environment_id", "publisher_owner", "repository", "repository_id", "visibility", "commit", "tree", "tag", "tag_object", "tag_target", "source_paths"],
+      "properties": {
+        "environment_id": {"type": "string", "minLength": 1}, "publisher_owner": {"type": "string", "minLength": 1},
+        "repository": {"type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"}, "repository_id": {"type": "string", "pattern": "^[0-9]+$"}, "visibility": {"enum": ["public", "private"]},
+        "commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"}, "tree": {"type": "string", "pattern": "^[a-f0-9]{40}$"}, "tag": {"type": "string", "minLength": 1},
+        "tag_object": {"type": "string", "pattern": "^[a-f0-9]{40}$"}, "tag_target": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+        "source_paths": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    },
+    "source_review": {
+      "type": "object", "additionalProperties": false,
+      "required": ["original_publisher", "source_classification", "first_known_at", "last_reviewed_at", "privacy_classification", "source_credential_review", "synthetic_or_simulated_status", "independently_validated", "adverse_evaluations", "compatibility_impact", "broader_scope_limitations"],
+      "properties": {
+        "original_publisher": {"type": "string", "minLength": 1}, "source_classification": {"type": "string", "minLength": 1},
+        "first_known_at": {"type": ["string", "null"]}, "last_reviewed_at": {"type": "string", "minLength": 1}, "privacy_classification": {"type": "string", "minLength": 1},
+        "source_credential_review": {"enum": ["pass", "fail", "pending", "unknown"]}, "synthetic_or_simulated_status": {"enum": ["none", "synthetic", "simulated", "mixed", "unknown"]},
+        "independently_validated": {"type": "boolean"}, "adverse_evaluations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "compatibility_impact": {"enum": ["patch", "minor", "major", "none", "deferred"]}, "broader_scope_limitations": {"type": "string", "minLength": 1}
+      }
+    }
   }
 }

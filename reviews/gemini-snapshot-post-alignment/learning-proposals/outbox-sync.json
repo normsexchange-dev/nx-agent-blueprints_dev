@@ -1,0 +1,53 @@
+{
+  "$schema": "../../../schemas/learning-proposal.schema.json",
+  "schema_version": "1.0.0",
+  "proposal_id": "gemini-outbox-sync-001",
+  "proposing_environment": "normsexchange-dev",
+  "proposing_agent": "STOVE2_FRONTEND",
+  "target_scope": "rejected_or_unverified",
+  "target_family": null,
+  "observation": "The source presents a Git-backed federated outbox with older protocol references and an initial delivered state.",
+  "evidence_references": [
+    {"source_kind": "immutable_public_git", "path": "server/database.ts", "sha256_lf": "bca0a335280a7fa8c0a6c856c71d5955095ea640c16b2e7dabead6410225d8a8"},
+    {"source_kind": "immutable_public_git", "path": "src/components/GitOutboxConsole.tsx", "sha256_lf": "10e873a18814387fafbab68d29f7734a5abf61bfc24c45fd0e4feff70a92f84c"},
+    {"source_kind": "canonical_communications", "release": "communications-v0.6.0"}
+  ],
+  "provenance_classification": "deprecated_rule",
+  "confidence": 0.9,
+  "known_counterexamples": ["The canonical communications release already defines governed interoperability without granting external write authority."],
+  "conflict_analysis": "The database gate is a useful local safety pattern, but the presented transport is stale, duplicates canonical transport, and includes a fabricated delivered state. It cannot be promoted as transport or family knowledge.",
+  "privacy_review": "pass",
+  "credential_review": "pass",
+  "proposed_wording": "Reject this transport proposal; retain only the canonical communications release and require separate authority for every external message.",
+  "affected_playbook_sections": [],
+  "proposed_evaluation_changes": ["Reject stale duplicate transports and prepopulated delivery claims.", "Verify that a family grants no message authority."],
+  "disposition": "rejected",
+  "adopting_authority": null,
+  "release_containing_lesson": null,
+  "foreign_source": {
+    "environment_id": "gemini-sandbox-legacy",
+    "publisher_owner": "normsexchange-gemini",
+    "repository": "normsexchange-gemini/nx-gemini-communications_dev",
+    "repository_id": "1346945284",
+    "visibility": "public",
+    "commit": "857111e7c39b355e3a7f6f999c6997a5449424d7",
+    "tree": "58f01277d3ef07ae052ba1d49c69d58dffb2e809",
+    "tag": "snapshot-post-alignment",
+    "tag_object": "98db76569ee59266f0d9e914cb06280041e7fa02",
+    "tag_target": "857111e7c39b355e3a7f6f999c6997a5449424d7",
+    "source_paths": ["server/database.ts", "src/components/GitOutboxConsole.tsx"]
+  },
+  "source_review": {
+    "original_publisher": "normsexchange-gemini",
+    "source_classification": "obsolete or unverified transport procedure",
+    "first_known_at": null,
+    "last_reviewed_at": "2026-08-29T02:00:00Z",
+    "privacy_classification": "sanitized procedure description",
+    "source_credential_review": "unknown",
+    "synthetic_or_simulated_status": "mixed",
+    "independently_validated": false,
+    "adverse_evaluations": ["stale-duplicate-transport-rejected", "no-message-authority"],
+    "compatibility_impact": "none",
+    "broader_scope_limitations": "Transport is outside WTB family purpose and cannot become a standard without a separately governed communications change."
+  }
+}

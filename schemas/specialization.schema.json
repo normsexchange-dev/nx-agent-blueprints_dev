@@ -1,5 +1,5 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.1.1/schemas/specialization.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "https://raw.githubusercontent.com/normsexchange-dev/nx-agent-blueprints_dev/blueprints-v0.2.0/schemas/specialization.schema.json",
   "title": "NX family specialization proposal", "type": "object", "additionalProperties": false,
   "required": ["schema_version", "specialization_id", "base_family", "base_release", "additional_purpose", "additional_knowledge", "additional_procedures", "precedence", "declared_overrides"],
   "properties": {"schema_version": {"const": "1.0.0"}, "specialization_id": {"type": "string"}, "base_family": {"type": "string"}, "base_release": {"type": "string"}, "additional_purpose": {"type": "string"}, "additional_knowledge": {"type": "array"}, "additional_procedures": {"type": "array"}, "precedence": {"const": "specialization-may-narrow-but-not-silently-override-family"}, "declared_overrides": {"type": "array"}}
