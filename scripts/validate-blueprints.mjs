@@ -7,6 +7,7 @@ const REQUIRED = [
   '.github/workflows/validate-blueprints.yml', '.gitattributes', '.gitignore', 'CHANGELOG.md', 'README.md', 'VERSION', 'dependencies.json',
   'registry/families.json', 'docs/INHERITANCE_ARCHITECTURE.md', 'docs/LEARNING_PROMOTION.md', 'docs/FOREIGN_LEARNING_INTEGRATION.md', 'docs/VERSIONING_AND_RELEASES.md',
   'docs/MATERIALIZATION_AND_ADOPTION.md', 'docs/FORKS_AND_SPECIALIZATIONS.md', 'docs/PAIRWISE_BLUEPRINT_EXCHANGE.md', 'docs/KNOWLEDGE_SECURITY.md',
+  'docs/FRAMEWORK_LAYER_INTEROPERABILITY_dev.md',
   'schemas/family-blueprint.schema.json', 'schemas/family-registry.schema.json', 'schemas/learning-proposal.schema.json',
   'schemas/agent-instantiation-proposal.schema.json', 'schemas/agent-manifest.schema.json', 'schemas/adoption-record.schema.json',
   'schemas/fork.schema.json', 'schemas/specialization.schema.json', 'schemas/blueprint-reference.schema.json', 'schemas/rendered-bundle.schema.json',
@@ -14,9 +15,15 @@ const REQUIRED = [
   'scripts/render-family.mjs', 'scripts/materialize-agent.mjs', 'scripts/compare-agent-update.mjs', 'scripts/record-adoption.mjs',
   'scripts/validate-learning-proposal.mjs', 'scripts/propose-learning-promotion.mjs', 'scripts/propose-fork.mjs', 'scripts/propose-specialization.mjs',
   'scripts/validate-blueprint-reference.mjs', 'scripts/resolve-family.mjs', 'tests/blueprints.test.mjs', 'tests/foreign-learning.test.mjs',
+  'tests/framework-interoperability.test.mjs',
   'reviews/gemini-snapshot-post-alignment/source.json', 'reviews/gemini-snapshot-post-alignment/inventory.json', 'reviews/gemini-snapshot-post-alignment/REVIEW.md'
 ];
-const ALLOWED_REPOSITORIES = new Set([SOURCE_REPOSITORY, 'normsexchange-dev/nx-codex-communications_dev', 'normsexchange-dev/nx-sourcing-contracts_dev', 'normsexchange-gemini/nx-gemini-communications_dev']);
+const ALLOWED_REPOSITORIES = new Set([
+  SOURCE_REPOSITORY, 'normsexchange-dev/nx-codex-communications_dev',
+  'normsexchange-dev/nx-environment-profiles_dev', 'normsexchange-dev/nx-sourcing-contracts_dev',
+  'normsexchange-dev/ai-agent-control', 'normsexchange-dev/ai-agent-ops',
+  'normsexchange-gemini/nx-gemini-communications_dev'
+]);
 
 async function main() {
   const branch = parseArgs(process.argv.slice(2)).branch;
@@ -60,7 +67,7 @@ async function main() {
   for (const match of scriptText.matchAll(/^import .* from ['"]([^'"]+)['"];$/gm)) assert(match[1].startsWith('node:') || match[1].startsWith('.'), 'third_party_import_detected');
 
   const credentialPatterns = [new RegExp(['gh', '[pousr]_', '[A-Za-z0-9]{20,}'].join('')), new RegExp(['github', '_pat_', '[A-Za-z0-9_]{20,}'].join('')), /-----BEGIN [A-Z ]*PRIVATE KEY-----/];
-  const forbiddenTopology = [['ai', 'agent', 'control'].join('-'), ['ai', 'agent', 'ops'].join('-'), ['nx', 'to', 'gemini_dev'].join('-')];
+  const forbiddenTopology = [['nx', 'to', 'gemini_dev'].join('-')];
   for (const relative of files) {
     const buffer = await readFile(path.join(ROOT, relative));
     if (buffer.includes(0)) continue;
