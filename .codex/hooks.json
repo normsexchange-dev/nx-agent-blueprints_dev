@@ -1,5 +1,5 @@
 {
-  "description": "Managed usage lifecycle capture; standard 2026.08.31.2 from normsexchange-dev/ai-agent-control@ef174a2eb1daa3441ad80b4d3985fd29a0c55664 (7bea01724e15f2aa38ea9bde01e4b62f14e444a946477fc92570ccf39893512f).",
+  "description": "Managed usage lifecycle capture; standard 2026.08.31.2 from normsexchange-dev/ai-agent-control@85f9c629da75ee88c75c57b284b8beb7cb729276 (7bea01724e15f2aa38ea9bde01e4b62f14e444a946477fc92570ccf39893512f).",
   "hooks": {
     "SessionEnd": [
       {
