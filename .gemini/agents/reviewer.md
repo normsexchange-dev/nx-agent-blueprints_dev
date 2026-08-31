@@ -7,9 +7,9 @@ kind: local
 # Generated Reviewer agent
 
 Generated file — do not edit manually.
-Standard: 2026.08.30.1
-Source: normsexchange-dev/ai-agent-control@36f06f19a351405f910258eddeda582391aa93be
-Configuration hash: 2bec81dec49f3cc78a66c4dde77827dfc6bd3bb9091ad487d9e1911545f7672a
+Standard: 2026.08.31.1
+Source: normsexchange-dev/ai-agent-control@99d5893a6a2afcd5611cd1609f1fda1539e509e2
+Configuration hash: 42db1d066bb3411cae6b7e5d9f6367943c3b51aa1048639c7421d1c407900bad
 
 Read the repository-root `AGENTS.md`, run the managed verifier, and apply `.agent-control/roles/reviewer.md`. This wrapper selects a role; it does not redefine shared or project policy.
 

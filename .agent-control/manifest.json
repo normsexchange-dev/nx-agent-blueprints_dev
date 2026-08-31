@@ -4,78 +4,78 @@
   "repository": "normsexchange-dev/nx-agent-blueprints_dev",
   "integration_branch": "main",
   "operations_repository": "normsexchange-dev/ai-agent-ops",
-  "installed_standard_version": "2026.08.30.1",
-  "required_standard_version": "2026.08.30.1",
+  "installed_standard_version": "2026.08.31.1",
+  "required_standard_version": "2026.08.31.1",
   "source_repository": "normsexchange-dev/ai-agent-control",
-  "source_commit": "36f06f19a351405f910258eddeda582391aa93be",
-  "configuration_hash": "2bec81dec49f3cc78a66c4dde77827dfc6bd3bb9091ad487d9e1911545f7672a",
+  "source_commit": "99d5893a6a2afcd5611cd1609f1fda1539e509e2",
+  "configuration_hash": "42db1d066bb3411cae6b7e5d9f6367943c3b51aa1048639c7421d1c407900bad",
   "adapter_versions": {
-    "codex": "2.0.0",
+    "codex": "3.0.0",
     "gemini": "2.0.0",
     "claude": "1.0.0",
     "copilot": "1.0.0"
   },
-  "always_loaded_bytes": 8616,
+  "always_loaded_bytes": 8598,
   "managed_files": [
     {
       "path": "AGENTS.md",
       "strategy": "file",
-      "sha256": "fb6071dad799ebd69c458b316cedbce42363294840815484eab31f954a5e845c"
+      "sha256": "92c9814a9c6b9c82068de269f597880e124751d03b809f0183558f9d2463ce2c"
     },
     {
       "path": "CLAUDE.md",
       "strategy": "file",
-      "sha256": "15d3420d4e29d7f836d8889b133bf463f25f250a6275273c355a6faec95e26b2"
+      "sha256": "4aa13415d367fe400e6591d930a68a6eaa020c0861405848b8060cb17299a38f"
     },
     {
       "path": ".github/copilot-instructions.md",
       "strategy": "file",
-      "sha256": "e1780971067cb9cbff2ea74e6abe27d833d6ac854487db618c2e3121b5d99063"
+      "sha256": "3d18c71ddd00db32907402e7e71beb3b95f8ea35a0dd15f514efa3d8910ee4dc"
     },
     {
       "path": ".agent-control/verify-agent-config.ps1",
       "strategy": "file",
-      "sha256": "364b09470ea7f77e02d2f85d2524d7bf3bb19c26d992c98c7a9eecbafe85c01e"
+      "sha256": "9894b1166faf17747a7486152ddfc91cdc0c7cc848e9d3ade7fcbc37c6129c4a"
     },
     {
       "path": ".agent-control/hooks/codex-usage-capture.ps1",
       "strategy": "file",
-      "sha256": "e68646647da96b183b02ed5d83ce94798b98d607d3525e99eeba6fc87a4b2b6b"
+      "sha256": "6a38cc2be8aafde8a083a0211be96f635722d463847bb377509a70fc27ac47f4"
     },
     {
       "path": ".codex/hooks.json",
       "strategy": "file",
-      "sha256": "abe979e01a9d0af1c3b36df1837eb92149a002479679286bcc4fd12931d8c6ad"
+      "sha256": "f8966d84945bf9e661e0340a21fd5dd73f9b0b91726e9ac0f11598570b31d7ed"
     },
     {
       "path": ".agent-control/roles/coordinator.md",
       "strategy": "file",
-      "sha256": "fdd8312dbe16a14a3845fca3c43ec238775688843237184d2e056f63e507564b"
+      "sha256": "a8730ef9a49f626079244e4ec841816f8ac0c45827f75967b7b2132bcc659aeb"
     },
     {
       "path": ".gemini/agents/coordinator.md",
       "strategy": "file",
-      "sha256": "8bdf191f3b99edb5d1bd6f90bd51409c071671c3ee896703c29a432290c3dee1"
+      "sha256": "66ca269caadb3b258779f23114577687f52b282f4a7bfa577c69437712f46ade"
     },
     {
       "path": ".agent-control/roles/research.md",
       "strategy": "file",
-      "sha256": "41e2365e911d9fe0a03d0273a3414d8858e4da192b6b7cc7619290f8c8c5998c"
+      "sha256": "e0de32466169b0b07d78de21076a10be1e712239a76a640f2cb02c2ca0de8a15"
     },
     {
       "path": ".gemini/agents/research.md",
       "strategy": "file",
-      "sha256": "9003ec43b33999891eb1b3344f07e9e591a28824aea6e196bb0a7925556b77d5"
+      "sha256": "68b0dee953c9453a02e44609180e63e442a10c71baa146f1a98c2d7c27e44864"
     },
     {
       "path": ".agent-control/roles/reviewer.md",
       "strategy": "file",
-      "sha256": "4504d2c1eda6074bb935a51f5aab99b1764105eb03806deda523340ea21ec605"
+      "sha256": "19f65455b78e33a09037cb383cf76f112bd3cb0878cc22e2c4dcb57660ce0b42"
     },
     {
       "path": ".gemini/agents/reviewer.md",
       "strategy": "file",
-      "sha256": "001c196baf2b95488ea7b58cacdda336fb11bb5d6cdd21511146a0cdced29983"
+      "sha256": "6403a1757abab122b23c6d4e7a047e4cf7390b5b5f5bb00e2d98d633784f123e"
     },
     {
       "path": ".gemini/settings.json",
