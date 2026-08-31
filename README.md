@@ -1,6 +1,8 @@
 # NX Agent Blueprints
 
-NX Agent Blueprints is a public, vendor-neutral contract for publishing durable agent-family knowledge without publishing credentials, private memory, operational history, or authority. Release `0.2.0` adds a governed foreign-learning review path while remaining a nonoperational reference foundation for sovereign environments.
+**PeopleBot / NX framework:** [PeopleBot](https://peoplebot.me/) · [NX Communications](https://github.com/normsexchange-dev/nx-codex-communications_dev) · [NX Environment Profiles](https://github.com/normsexchange-dev/nx-environment-profiles_dev) · **NX Agent Blueprints**
+
+NX Agent Blueprints packages reusable AI-agent skills, procedures, and evaluations without copying credentials, private memory, operational history, or authority. The public, vendor-neutral contract in release `0.2.0` adds a governed foreign-learning review path while remaining a nonoperational reference foundation for sovereign environments.
 
 The inheritance chain is:
 
@@ -25,6 +27,8 @@ Lower layers add context but cannot silently override higher-authority boundarie
 
 The blueprint grants no external capability. It does not activate a mission, create an agent, contact anyone, admit business data, modify commerce systems, or grant repository access.
 
+The contract is the reusable framework; `wtb-researcher` is a Norms Exchange-owned example, not a required PeopleBot feature. Agent families are optional and remain separate from Communications transport and Environment Profile runtime capability. The unreleased integration note at `docs/FRAMEWORK_LAYER_INTEROPERABILITY_dev.md` explains those boundaries and the possible future Communications 0.8 message-store mapping without changing the 0.2 release or claiming candidate tags exist.
+
 ## Validate and test
 
 ```sh
@@ -40,7 +44,7 @@ node scripts/validate-release.mjs --tag blueprints-v0.2.0
 
 No package install, model call, network request, credential, or mutable `main` reference is required.
 
-Foreign learning is reviewed from an exact annotated source snapshot without executing foreign code. A source environment retains ownership of its history, instance memory, policies, and applications; a Norms release retains both source-publisher provenance and the independent adopting review. See `docs/FOREIGN_LEARNING_INTEGRATION.md`.
+Foreign learning is reviewed from an exact annotated source snapshot without executing foreign code. A source environment retains ownership of its history, instance memory, policies, and applications; an adopting release retains both source-publisher provenance and the independent adopting review. See `docs/FOREIGN_LEARNING_INTEGRATION.md`.
 
 ## Runtime rendering and proposed materialization
 
@@ -56,5 +60,4 @@ From an exact release-tag checkout, `scripts/prove-inheritance.mjs` renders dete
 
 ## Sovereignty
 
-The registry is discovery, not authority. A sovereign environment may evaluate, adopt, reject, defer, fork, specialize, deprecate, or retire a family under its own constitution. It cannot rewrite another publisher's release. Norms Exchange control applies only to Norms-owned artifacts, identities operating inside Norms-owned boundaries, and capabilities or information crossing into those boundaries.
-Vendor-neutral sovereign agent-family blueprints, learning inheritance, deterministic validation, and public reference families.
+The registry is discovery, not authority. A sovereign environment may evaluate, adopt, reject, defer, fork, specialize, deprecate, or retire a family under its own constitution. It cannot rewrite another publisher's release. A publisher's control applies only to publisher-owned artifacts, identities operating inside that publisher's boundaries, and capabilities or information crossing into those boundaries.

@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+- Clarified that the generic blueprint contract is optional framework infrastructure while `wtb-researcher` is a publisher-specific reference family.
+- Documented the unreleased Communications 0.8 message-store and Environment Profiles 1.1 layer boundaries without changing stable compatibility, schemas, version, tags, or activation authority.
+- Clarified that discovery, transport, family adoption, runtime capability, mission, and action authority remain independent.
+
 ## 0.2.0 — 2026-08-28
 
 - Added exact, public-safe review provenance for the sovereign Gemini `snapshot-post-alignment` source and deterministic verification of its annotated objects, ancestry, tree, changed paths, and LF-normalized file digests.
