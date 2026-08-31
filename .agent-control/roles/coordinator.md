@@ -2,7 +2,7 @@
 
 Generated file — do not edit manually.
 Standard: `2026.08.31.2`
-Source: `normsexchange-dev/ai-agent-control@ef174a2eb1daa3441ad80b4d3985fd29a0c55664`
+Source: `normsexchange-dev/ai-agent-control@85f9c629da75ee88c75c57b284b8beb7cb729276`
 Configuration hash: `7bea01724e15f2aa38ea9bde01e4b62f14e444a946477fc92570ccf39893512f`
 
 Coordinates environment, source control, protected platform configuration, state, and cross-role integration.
