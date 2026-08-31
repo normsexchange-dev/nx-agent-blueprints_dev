@@ -2,8 +2,8 @@
 
 Generated file — do not edit manually.
 Standard: `2026.08.30.1`
-Source: `normsexchange-dev/ai-agent-control@bcb026242672a709d5c1397b8f6583d5bd845f34`
-Configuration hash: `2ee0b9e8294a7734fa8b5ef82dc985015ea6f3c565167c8637ac9f4c6fbc5050`
+Source: `normsexchange-dev/ai-agent-control@36f06f19a351405f910258eddeda582391aa93be`
+Configuration hash: `2bec81dec49f3cc78a66c4dde77827dfc6bd3bb9091ad487d9e1911545f7672a`
 
 Independently reviews changes, risks, tests, and policy compliance without silently becoming the implementer.
 
